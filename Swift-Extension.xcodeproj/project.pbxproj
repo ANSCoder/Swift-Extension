@@ -47,17 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17427A02201CA8820055551C /* Swift-Extensionn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Extensionn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17427A02201CA8820055551C /* Swift-Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Extension.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17427A05201CA8820055551C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17427A07201CA8820055551C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17427A0A201CA8820055551C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17427A0C201CA8820055551C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17427A0F201CA8820055551C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17427A11201CA8820055551C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17427A16201CA8820055551C /* Swift-ExtensionnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExtensionnTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17427A16201CA8820055551C /* Swift-ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17427A1A201CA8820055551C /* Swift_ExtensionnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExtensionnTests.swift; sourceTree = "<group>"; };
 		17427A1C201CA8820055551C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17427A21201CA8820055551C /* Swift-ExtensionnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExtensionnUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17427A21201CA8820055551C /* Swift-ExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExtensionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17427A25201CA8820055551C /* Swift_ExtensionnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExtensionnUITests.swift; sourceTree = "<group>"; };
 		17427A27201CA8820055551C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17427A34201CAB4D0055551C /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 		174279F9201CA8820055551C = {
 			isa = PBXGroup;
 			children = (
-				17427A04201CA8820055551C /* Swift-Extensionn */,
-				17427A19201CA8820055551C /* Swift-ExtensionnTests */,
-				17427A24201CA8820055551C /* Swift-ExtensionnUITests */,
+				17427A04201CA8820055551C /* Swift-Extension */,
+				17427A19201CA8820055551C /* Swift-ExtensionTests */,
+				17427A24201CA8820055551C /* Swift-ExtensionUITests */,
 				17427A03201CA8820055551C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,14 +113,14 @@
 		17427A03201CA8820055551C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17427A02201CA8820055551C /* Swift-Extensionn.app */,
-				17427A16201CA8820055551C /* Swift-ExtensionnTests.xctest */,
-				17427A21201CA8820055551C /* Swift-ExtensionnUITests.xctest */,
+				17427A02201CA8820055551C /* Swift-Extension.app */,
+				17427A16201CA8820055551C /* Swift-ExtensionTests.xctest */,
+				17427A21201CA8820055551C /* Swift-ExtensionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17427A04201CA8820055551C /* Swift-Extensionn */ = {
+		17427A04201CA8820055551C /* Swift-Extension */ = {
 			isa = PBXGroup;
 			children = (
 				17427A33201CAB2D0055551C /* Extensions */,
@@ -131,25 +131,25 @@
 				17427A0E201CA8820055551C /* LaunchScreen.storyboard */,
 				17427A11201CA8820055551C /* Info.plist */,
 			);
-			path = "Swift-Extensionn";
+			path = "Swift-Extension";
 			sourceTree = "<group>";
 		};
-		17427A19201CA8820055551C /* Swift-ExtensionnTests */ = {
+		17427A19201CA8820055551C /* Swift-ExtensionTests */ = {
 			isa = PBXGroup;
 			children = (
 				17427A1A201CA8820055551C /* Swift_ExtensionnTests.swift */,
 				17427A1C201CA8820055551C /* Info.plist */,
 			);
-			path = "Swift-ExtensionnTests";
+			path = "Swift-ExtensionTests";
 			sourceTree = "<group>";
 		};
-		17427A24201CA8820055551C /* Swift-ExtensionnUITests */ = {
+		17427A24201CA8820055551C /* Swift-ExtensionUITests */ = {
 			isa = PBXGroup;
 			children = (
 				17427A25201CA8820055551C /* Swift_ExtensionnUITests.swift */,
 				17427A27201CA8820055551C /* Info.plist */,
 			);
-			path = "Swift-ExtensionnUITests";
+			path = "Swift-ExtensionUITests";
 			sourceTree = "<group>";
 		};
 		17427A33201CAB2D0055551C /* Extensions */ = {
@@ -175,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17427A01201CA8820055551C /* Swift-Extensionn */ = {
+		17427A01201CA8820055551C /* Swift-Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17427A2A201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-Extensionn" */;
+			buildConfigurationList = 17427A2A201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-Extension" */;
 			buildPhases = (
 				174279FE201CA8820055551C /* Sources */,
 				174279FF201CA8820055551C /* Frameworks */,
@@ -187,14 +187,14 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-Extensionn";
+			name = "Swift-Extension";
 			productName = "Swift-Extensionn";
-			productReference = 17427A02201CA8820055551C /* Swift-Extensionn.app */;
+			productReference = 17427A02201CA8820055551C /* Swift-Extension.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17427A15201CA8820055551C /* Swift-ExtensionnTests */ = {
+		17427A15201CA8820055551C /* Swift-ExtensionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17427A2D201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionnTests" */;
+			buildConfigurationList = 17427A2D201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionTests" */;
 			buildPhases = (
 				17427A12201CA8820055551C /* Sources */,
 				17427A13201CA8820055551C /* Frameworks */,
@@ -205,14 +205,14 @@
 			dependencies = (
 				17427A18201CA8820055551C /* PBXTargetDependency */,
 			);
-			name = "Swift-ExtensionnTests";
+			name = "Swift-ExtensionTests";
 			productName = "Swift-ExtensionnTests";
-			productReference = 17427A16201CA8820055551C /* Swift-ExtensionnTests.xctest */;
+			productReference = 17427A16201CA8820055551C /* Swift-ExtensionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		17427A20201CA8820055551C /* Swift-ExtensionnUITests */ = {
+		17427A20201CA8820055551C /* Swift-ExtensionUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17427A30201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionnUITests" */;
+			buildConfigurationList = 17427A30201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionUITests" */;
 			buildPhases = (
 				17427A1D201CA8820055551C /* Sources */,
 				17427A1E201CA8820055551C /* Frameworks */,
@@ -223,9 +223,9 @@
 			dependencies = (
 				17427A23201CA8820055551C /* PBXTargetDependency */,
 			);
-			name = "Swift-ExtensionnUITests";
+			name = "Swift-ExtensionUITests";
 			productName = "Swift-ExtensionnUITests";
-			productReference = 17427A21201CA8820055551C /* Swift-ExtensionnUITests.xctest */;
+			productReference = 17427A21201CA8820055551C /* Swift-ExtensionUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 174279FD201CA8820055551C /* Build configuration list for PBXProject "Swift-Extensionn" */;
+			buildConfigurationList = 174279FD201CA8820055551C /* Build configuration list for PBXProject "Swift-Extension" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,9 +267,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17427A01201CA8820055551C /* Swift-Extensionn */,
-				17427A15201CA8820055551C /* Swift-ExtensionnTests */,
-				17427A20201CA8820055551C /* Swift-ExtensionnUITests */,
+				17427A01201CA8820055551C /* Swift-Extension */,
+				17427A15201CA8820055551C /* Swift-ExtensionTests */,
+				17427A20201CA8820055551C /* Swift-ExtensionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,12 +345,12 @@
 /* Begin PBXTargetDependency section */
 		17427A18201CA8820055551C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17427A01201CA8820055551C /* Swift-Extensionn */;
+			target = 17427A01201CA8820055551C /* Swift-Extension */;
 			targetProxy = 17427A17201CA8820055551C /* PBXContainerItemProxy */;
 		};
 		17427A23201CA8820055551C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17427A01201CA8820055551C /* Swift-Extensionn */;
+			target = 17427A01201CA8820055551C /* Swift-Extension */;
 			targetProxy = 17427A22201CA8820055551C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -489,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Swift-Extensionn/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anscoder.Swift-Extensionn";
+				PRODUCT_BUNDLE_IDENTIFIER = "anscoder.Swift-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -503,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Swift-Extensionn/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "anscoder.Swift-Extensionn";
+				PRODUCT_BUNDLE_IDENTIFIER = "anscoder.Swift-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Extensionn.app/Swift-Extensionn";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Extension.app/Swift-Extension";
 			};
 			name = Debug;
 		};
@@ -538,7 +538,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Extensionn.app/Swift-Extensionn";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Extension.app/Swift-Extension";
 			};
 			name = Release;
 		};
@@ -575,7 +575,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		174279FD201CA8820055551C /* Build configuration list for PBXProject "Swift-Extensionn" */ = {
+		174279FD201CA8820055551C /* Build configuration list for PBXProject "Swift-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17427A28201CA8820055551C /* Debug */,
@@ -584,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17427A2A201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-Extensionn" */ = {
+		17427A2A201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17427A2B201CA8820055551C /* Debug */,
@@ -593,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17427A2D201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionnTests" */ = {
+		17427A2D201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17427A2E201CA8820055551C /* Debug */,
@@ -602,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17427A30201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionnUITests" */ = {
+		17427A30201CA8820055551C /* Build configuration list for PBXNativeTarget "Swift-ExtensionUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17427A31201CA8820055551C /* Debug */,
