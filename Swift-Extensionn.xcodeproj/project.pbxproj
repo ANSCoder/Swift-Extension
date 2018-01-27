@@ -14,6 +14,19 @@
 		17427A10201CA8820055551C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17427A0E201CA8820055551C /* LaunchScreen.storyboard */; };
 		17427A1B201CA8820055551C /* Swift_ExtensionnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A1A201CA8820055551C /* Swift_ExtensionnTests.swift */; };
 		17427A26201CA8820055551C /* Swift_ExtensionnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A25201CA8820055551C /* Swift_ExtensionnUITests.swift */; };
+		17427A35201CAB4D0055551C /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A34201CAB4D0055551C /* ExString.swift */; };
+		17427A37201CABA30055551C /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A36201CABA30055551C /* ExColor.swift */; };
+		17427A39201CACA50055551C /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A38201CACA50055551C /* ExArray.swift */; };
+		17427A3B201CACC00055551C /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A3A201CACC00055551C /* ExDate.swift */; };
+		17427A3D201CACD80055551C /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A3C201CACD80055551C /* ExScrollView.swift */; };
+		17427A3F201CAD230055551C /* ExLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A3E201CAD230055551C /* ExLabel.swift */; };
+		17427A43201CADF40055551C /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A42201CADF40055551C /* ExUIImage.swift */; };
+		17427A45201CAE180055551C /* ExUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A44201CAE180055551C /* ExUIImageView.swift */; };
+		17427A47201CB1510055551C /* ExUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A46201CB1510055551C /* ExUITextField.swift */; };
+		17427A49201CB1920055551C /* ExFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A48201CB1920055551C /* ExFunction.swift */; };
+		17427A4B201CB2110055551C /* ExNSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A4A201CB2110055551C /* ExNSMutableAttributedString.swift */; };
+		17427A4D201CB4470055551C /* ExUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A4C201CB4470055551C /* ExUIViewController.swift */; };
+		17427A4F201CB5A00055551C /* ExUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A4E201CB5A00055551C /* ExUINavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +60,19 @@
 		17427A21201CA8820055551C /* Swift-ExtensionnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExtensionnUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17427A25201CA8820055551C /* Swift_ExtensionnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExtensionnUITests.swift; sourceTree = "<group>"; };
 		17427A27201CA8820055551C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17427A34201CAB4D0055551C /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		17427A36201CABA30055551C /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
+		17427A38201CACA50055551C /* ExArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
+		17427A3A201CACC00055551C /* ExDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
+		17427A3C201CACD80055551C /* ExScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
+		17427A3E201CAD230055551C /* ExLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExLabel.swift; sourceTree = "<group>"; };
+		17427A42201CADF40055551C /* ExUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
+		17427A44201CAE180055551C /* ExUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImageView.swift; sourceTree = "<group>"; };
+		17427A46201CB1510055551C /* ExUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUITextField.swift; sourceTree = "<group>"; };
+		17427A48201CB1920055551C /* ExFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExFunction.swift; sourceTree = "<group>"; };
+		17427A4A201CB2110055551C /* ExNSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSMutableAttributedString.swift; sourceTree = "<group>"; };
+		17427A4C201CB4470055551C /* ExUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIViewController.swift; sourceTree = "<group>"; };
+		17427A4E201CB5A00055551C /* ExUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUINavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +123,7 @@
 		17427A04201CA8820055551C /* Swift-Extensionn */ = {
 			isa = PBXGroup;
 			children = (
+				17427A33201CAB2D0055551C /* Extensions */,
 				17427A05201CA8820055551C /* AppDelegate.swift */,
 				17427A07201CA8820055551C /* ViewController.swift */,
 				17427A09201CA8820055551C /* Main.storyboard */,
@@ -123,6 +150,26 @@
 				17427A27201CA8820055551C /* Info.plist */,
 			);
 			path = "Swift-ExtensionnUITests";
+			sourceTree = "<group>";
+		};
+		17427A33201CAB2D0055551C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17427A34201CAB4D0055551C /* ExString.swift */,
+				17427A4A201CB2110055551C /* ExNSMutableAttributedString.swift */,
+				17427A36201CABA30055551C /* ExColor.swift */,
+				17427A38201CACA50055551C /* ExArray.swift */,
+				17427A3A201CACC00055551C /* ExDate.swift */,
+				17427A3C201CACD80055551C /* ExScrollView.swift */,
+				17427A3E201CAD230055551C /* ExLabel.swift */,
+				17427A42201CADF40055551C /* ExUIImage.swift */,
+				17427A44201CAE180055551C /* ExUIImageView.swift */,
+				17427A46201CB1510055551C /* ExUITextField.swift */,
+				17427A48201CB1920055551C /* ExFunction.swift */,
+				17427A4C201CB4470055551C /* ExUIViewController.swift */,
+				17427A4E201CB5A00055551C /* ExUINavigationBar.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +306,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17427A4B201CB2110055551C /* ExNSMutableAttributedString.swift in Sources */,
+				17427A3B201CACC00055551C /* ExDate.swift in Sources */,
+				17427A45201CAE180055551C /* ExUIImageView.swift in Sources */,
+				17427A4F201CB5A00055551C /* ExUINavigationBar.swift in Sources */,
+				17427A37201CABA30055551C /* ExColor.swift in Sources */,
+				17427A3D201CACD80055551C /* ExScrollView.swift in Sources */,
+				17427A43201CADF40055551C /* ExUIImage.swift in Sources */,
 				17427A08201CA8820055551C /* ViewController.swift in Sources */,
+				17427A39201CACA50055551C /* ExArray.swift in Sources */,
+				17427A3F201CAD230055551C /* ExLabel.swift in Sources */,
+				17427A35201CAB4D0055551C /* ExString.swift in Sources */,
 				17427A06201CA8820055551C /* AppDelegate.swift in Sources */,
+				17427A4D201CB4470055551C /* ExUIViewController.swift in Sources */,
+				17427A49201CB1920055551C /* ExFunction.swift in Sources */,
+				17427A47201CB1510055551C /* ExUITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
