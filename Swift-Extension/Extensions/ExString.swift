@@ -95,6 +95,15 @@ extension String {
     func trimWhiteSpace() -> String {
         return self.trimmingCharacters(in: .whitespaces)
     }
+    
+    //MARK: - Removing space from String
+    var removeSpace: String {
+        if self.isNotEmpty {
+            return self.components(separatedBy: .whitespaces).joined()
+        }else{
+            return ""
+        }
+    }
 }
 
 
