@@ -82,7 +82,7 @@ extension String {
     }
     
     //MARK : - For First Capital letter of String
-    func capitalizingFirstLetter() -> String {
+    private func capitalizingFirstLetter() -> String {
         let first = String(self.prefix(1)).capitalized
         let other = String(self.dropFirst())
         return first + other
