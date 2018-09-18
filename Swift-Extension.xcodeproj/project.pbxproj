@@ -15,20 +15,20 @@
 		17427A1B201CA8820055551C /* Swift_ExtensionnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A1A201CA8820055551C /* Swift_ExtensionnTests.swift */; };
 		17427A26201CA8820055551C /* Swift_ExtensionnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A25201CA8820055551C /* Swift_ExtensionnUITests.swift */; };
 		175EE610215161D60067D527 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175EE60F215161D60067D527 /* Default-568h@2x.png */; };
-		175EE61F215162530067D527 /* ExUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE612215162530067D527 /* ExUIImageView.swift */; };
-		175EE620215162530067D527 /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE613215162530067D527 /* ExUIImage.swift */; };
-		175EE621215162530067D527 /* ExFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE614215162530067D527 /* ExFunction.swift */; };
-		175EE622215162530067D527 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE615215162530067D527 /* ExColor.swift */; };
-		175EE623215162530067D527 /* ExNSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE616215162530067D527 /* ExNSMutableAttributedString.swift */; };
-		175EE624215162530067D527 /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE617215162530067D527 /* ExDate.swift */; };
-		175EE625215162530067D527 /* ExUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE618215162530067D527 /* ExUITextField.swift */; };
-		175EE626215162530067D527 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE619215162530067D527 /* ExString.swift */; };
-		175EE627215162530067D527 /* ExUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE61A215162530067D527 /* ExUINavigationBar.swift */; };
-		175EE628215162530067D527 /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE61B215162530067D527 /* ExScrollView.swift */; };
-		175EE629215162530067D527 /* ExUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE61C215162530067D527 /* ExUIViewController.swift */; };
-		175EE62A215162530067D527 /* ExLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE61D215162530067D527 /* ExLabel.swift */; };
-		175EE62B215162530067D527 /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EE61E215162530067D527 /* ExArray.swift */; };
 		1764837B2151650C00A20420 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1764837A2151650C00A20420 /* Info.plist */; };
+		1764838A215165B700A20420 /* ExUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764837D215165B700A20420 /* ExUIImageView.swift */; };
+		1764838B215165B700A20420 /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764837E215165B700A20420 /* ExUIImage.swift */; };
+		1764838C215165B700A20420 /* ExFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764837F215165B700A20420 /* ExFunction.swift */; };
+		1764838D215165B700A20420 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648380215165B700A20420 /* ExColor.swift */; };
+		1764838E215165B700A20420 /* ExNSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648381215165B700A20420 /* ExNSMutableAttributedString.swift */; };
+		1764838F215165B700A20420 /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648382215165B700A20420 /* ExDate.swift */; };
+		17648390215165B700A20420 /* ExUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648383215165B700A20420 /* ExUITextField.swift */; };
+		17648391215165B700A20420 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648384215165B700A20420 /* ExString.swift */; };
+		17648392215165B700A20420 /* ExUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648385215165B700A20420 /* ExUINavigationBar.swift */; };
+		17648393215165B700A20420 /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648386215165B700A20420 /* ExScrollView.swift */; };
+		17648394215165B700A20420 /* ExUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648387215165B700A20420 /* ExUIViewController.swift */; };
+		17648395215165B700A20420 /* ExLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648388215165B700A20420 /* ExLabel.swift */; };
+		17648396215165B700A20420 /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17648389215165B700A20420 /* ExArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,20 +62,20 @@
 		17427A25201CA8820055551C /* Swift_ExtensionnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExtensionnUITests.swift; sourceTree = "<group>"; };
 		17427A27201CA8820055551C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		175EE60F215161D60067D527 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		175EE612215162530067D527 /* ExUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIImageView.swift; sourceTree = "<group>"; };
-		175EE613215162530067D527 /* ExUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
-		175EE614215162530067D527 /* ExFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExFunction.swift; sourceTree = "<group>"; };
-		175EE615215162530067D527 /* ExColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
-		175EE616215162530067D527 /* ExNSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExNSMutableAttributedString.swift; sourceTree = "<group>"; };
-		175EE617215162530067D527 /* ExDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
-		175EE618215162530067D527 /* ExUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUITextField.swift; sourceTree = "<group>"; };
-		175EE619215162530067D527 /* ExString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
-		175EE61A215162530067D527 /* ExUINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUINavigationBar.swift; sourceTree = "<group>"; };
-		175EE61B215162530067D527 /* ExScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
-		175EE61C215162530067D527 /* ExUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIViewController.swift; sourceTree = "<group>"; };
-		175EE61D215162530067D527 /* ExLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExLabel.swift; sourceTree = "<group>"; };
-		175EE61E215162530067D527 /* ExArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
 		1764837A2151650C00A20420 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1764837D215165B700A20420 /* ExUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIImageView.swift; sourceTree = "<group>"; };
+		1764837E215165B700A20420 /* ExUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
+		1764837F215165B700A20420 /* ExFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExFunction.swift; sourceTree = "<group>"; };
+		17648380215165B700A20420 /* ExColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
+		17648381215165B700A20420 /* ExNSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExNSMutableAttributedString.swift; sourceTree = "<group>"; };
+		17648382215165B700A20420 /* ExDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
+		17648383215165B700A20420 /* ExUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUITextField.swift; sourceTree = "<group>"; };
+		17648384215165B700A20420 /* ExString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		17648385215165B700A20420 /* ExUINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUINavigationBar.swift; sourceTree = "<group>"; };
+		17648386215165B700A20420 /* ExScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
+		17648387215165B700A20420 /* ExUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIViewController.swift; sourceTree = "<group>"; };
+		17648388215165B700A20420 /* ExLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExLabel.swift; sourceTree = "<group>"; };
+		17648389215165B700A20420 /* ExArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 		17427A04201CA8820055551C /* Swift-Extension */ = {
 			isa = PBXGroup;
 			children = (
-				175EE611215162530067D527 /* Extensions */,
+				1764837C215165B700A20420 /* Extensions */,
 				17427A05201CA8820055551C /* AppDelegate.swift */,
 				17427A07201CA8820055551C /* ViewController.swift */,
 				17427A09201CA8820055551C /* Main.storyboard */,
@@ -156,22 +156,22 @@
 			path = "Swift-ExtensionUITests";
 			sourceTree = "<group>";
 		};
-		175EE611215162530067D527 /* Extensions */ = {
+		1764837C215165B700A20420 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				175EE612215162530067D527 /* ExUIImageView.swift */,
-				175EE613215162530067D527 /* ExUIImage.swift */,
-				175EE614215162530067D527 /* ExFunction.swift */,
-				175EE615215162530067D527 /* ExColor.swift */,
-				175EE616215162530067D527 /* ExNSMutableAttributedString.swift */,
-				175EE617215162530067D527 /* ExDate.swift */,
-				175EE618215162530067D527 /* ExUITextField.swift */,
-				175EE619215162530067D527 /* ExString.swift */,
-				175EE61A215162530067D527 /* ExUINavigationBar.swift */,
-				175EE61B215162530067D527 /* ExScrollView.swift */,
-				175EE61C215162530067D527 /* ExUIViewController.swift */,
-				175EE61D215162530067D527 /* ExLabel.swift */,
-				175EE61E215162530067D527 /* ExArray.swift */,
+				1764837D215165B700A20420 /* ExUIImageView.swift */,
+				1764837E215165B700A20420 /* ExUIImage.swift */,
+				1764837F215165B700A20420 /* ExFunction.swift */,
+				17648380215165B700A20420 /* ExColor.swift */,
+				17648381215165B700A20420 /* ExNSMutableAttributedString.swift */,
+				17648382215165B700A20420 /* ExDate.swift */,
+				17648383215165B700A20420 /* ExUITextField.swift */,
+				17648384215165B700A20420 /* ExString.swift */,
+				17648385215165B700A20420 /* ExUINavigationBar.swift */,
+				17648386215165B700A20420 /* ExScrollView.swift */,
+				17648387215165B700A20420 /* ExUIViewController.swift */,
+				17648388215165B700A20420 /* ExLabel.swift */,
+				17648389215165B700A20420 /* ExArray.swift */,
 			);
 			path = Extensions;
 			sourceTree = SOURCE_ROOT;
@@ -312,21 +312,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				175EE628215162530067D527 /* ExScrollView.swift in Sources */,
-				175EE62A215162530067D527 /* ExLabel.swift in Sources */,
-				175EE62B215162530067D527 /* ExArray.swift in Sources */,
-				175EE622215162530067D527 /* ExColor.swift in Sources */,
-				175EE623215162530067D527 /* ExNSMutableAttributedString.swift in Sources */,
-				175EE624215162530067D527 /* ExDate.swift in Sources */,
-				175EE620215162530067D527 /* ExUIImage.swift in Sources */,
-				175EE625215162530067D527 /* ExUITextField.swift in Sources */,
+				17648393215165B700A20420 /* ExScrollView.swift in Sources */,
+				17648395215165B700A20420 /* ExLabel.swift in Sources */,
+				17648396215165B700A20420 /* ExArray.swift in Sources */,
+				1764838D215165B700A20420 /* ExColor.swift in Sources */,
+				1764838E215165B700A20420 /* ExNSMutableAttributedString.swift in Sources */,
+				1764838F215165B700A20420 /* ExDate.swift in Sources */,
+				1764838B215165B700A20420 /* ExUIImage.swift in Sources */,
+				17648390215165B700A20420 /* ExUITextField.swift in Sources */,
 				17427A08201CA8820055551C /* ViewController.swift in Sources */,
 				17427A06201CA8820055551C /* AppDelegate.swift in Sources */,
-				175EE621215162530067D527 /* ExFunction.swift in Sources */,
-				175EE629215162530067D527 /* ExUIViewController.swift in Sources */,
-				175EE61F215162530067D527 /* ExUIImageView.swift in Sources */,
-				175EE627215162530067D527 /* ExUINavigationBar.swift in Sources */,
-				175EE626215162530067D527 /* ExString.swift in Sources */,
+				1764838C215165B700A20420 /* ExFunction.swift in Sources */,
+				17648394215165B700A20420 /* ExUIViewController.swift in Sources */,
+				1764838A215165B700A20420 /* ExUIImageView.swift in Sources */,
+				17648392215165B700A20420 /* ExUINavigationBar.swift in Sources */,
+				17648391215165B700A20420 /* ExString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
