@@ -27,6 +27,7 @@
 		17427A4B201CB2110055551C /* ExNSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A4A201CB2110055551C /* ExNSMutableAttributedString.swift */; };
 		17427A4D201CB4470055551C /* ExUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A4C201CB4470055551C /* ExUIViewController.swift */; };
 		17427A4F201CB5A00055551C /* ExUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17427A4E201CB5A00055551C /* ExUINavigationBar.swift */; };
+		175EE610215161D60067D527 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175EE60F215161D60067D527 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		17427A4A201CB2110055551C /* ExNSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSMutableAttributedString.swift; sourceTree = "<group>"; };
 		17427A4C201CB4470055551C /* ExUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIViewController.swift; sourceTree = "<group>"; };
 		17427A4E201CB5A00055551C /* ExUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUINavigationBar.swift; sourceTree = "<group>"; };
+		175EE60F215161D60067D527 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		174279F9201CA8820055551C = {
 			isa = PBXGroup;
 			children = (
+				175EE60F215161D60067D527 /* Default-568h@2x.png */,
 				17427A04201CA8820055551C /* Swift-Extension */,
 				17427A19201CA8820055551C /* Swift-ExtensionTests */,
 				17427A24201CA8820055551C /* Swift-ExtensionUITests */,
@@ -235,7 +238,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Anand;
 				TargetAttributes = {
 					17427A01201CA8820055551C = {
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17427A10201CA8820055551C /* LaunchScreen.storyboard in Resources */,
+				175EE610215161D60067D527 /* Default-568h@2x.png in Resources */,
 				17427A0D201CA8820055551C /* Assets.xcassets in Resources */,
 				17427A0B201CA8820055551C /* Main.storyboard in Resources */,
 			);
@@ -389,6 +393,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -396,6 +401,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -446,6 +452,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -453,6 +460,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
