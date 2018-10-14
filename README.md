@@ -15,6 +15,7 @@ Or directly you can copy and paste inside your class. 🚀
 ### Contents  🎉
  
  - **Array**
+ 
  ```swift
  extension Array {
     func atIndex(_ index: Int) -> Element? {
@@ -27,6 +28,7 @@ Or directly you can copy and paste inside your class. 🚀
 ```
  
  - **UILabel**
+ 
  ```swift
  extension UILabel{
     
@@ -62,6 +64,7 @@ Or directly you can copy and paste inside your class. 🚀
  ```
  
  - **UIViewController**
+ 
  ```swift
  extension UIViewController{
     
@@ -86,6 +89,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **UIScrollView**
+ 
  ```swift
  extension UIScrollView {
     
@@ -117,6 +121,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **UINavigationBar**
+ 
  ```swift
  public extension UINavigationBar {
     
@@ -161,6 +166,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **String**
+ 
  ```swift
  extension String {
     
@@ -242,6 +248,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **UITextField**
+ 
  ```swift
  extension UITextField {
     
@@ -287,6 +294,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **Date**
+ 
  ```swift
  extension Date {
     func toString() -> String {
@@ -302,6 +310,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **NSMutableAttributedString**
+ 
  ```swift
  extension NSMutableAttributedString {
     
@@ -322,6 +331,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **UIColor (HEX)**
+ 
  ```swift
   extension UIColor {
     convenience init(hex: String) {
@@ -347,6 +357,7 @@ Or directly you can copy and paste inside your class. 🚀
  ```
  
  - **UIImage**
+ 
  ```swift
  extension UIImage {
     
@@ -407,6 +418,7 @@ Or directly you can copy and paste inside your class. 🚀
 }
  ```
  - **UIImageView**
+ 
  ```swift
  extension UIImageView {
     
