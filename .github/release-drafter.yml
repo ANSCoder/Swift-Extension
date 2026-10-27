@@ -1,0 +1,37 @@
+name-template: "$RESOLVED_VERSION"
+tag-template: "$RESOLVED_VERSION"
+change-template: "- $TITLE (#$NUMBER) @$AUTHOR"
+categories:
+  - title: "Breaking changes"
+    labels: [breaking]
+  - title: "New extensions"
+    labels: [feature, enhancement]
+  - title: "Fixes"
+    labels: [bug, fix]
+  - title: "Documentation"
+    labels: [documentation]
+  - title: "Maintenance"
+    labels: [ci, dependencies, chore, tests]
+version-resolver:
+  major:
+    labels: [breaking]
+  minor:
+    labels: [feature, enhancement]
+  patch:
+    labels: [bug, fix, documentation, ci, dependencies, chore, tests]
+  default: patch
+autolabeler:
+  - label: feature
+    title: ["/^feat/i"]
+  - label: bug
+    title: ["/^fix/i"]
+  - label: documentation
+    title: ["/^docs/i"]
+  - label: breaking
+    title: ["/!:/"]
+template: |
+  ## What's changed
+
+  $CHANGES
+
+  **Full changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION

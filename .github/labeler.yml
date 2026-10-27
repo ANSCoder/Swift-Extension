@@ -1,0 +1,18 @@
+library:
+  - changed-files:
+      - any-glob-to-any-file: ["Sources/**"]
+tests:
+  - changed-files:
+      - any-glob-to-any-file: ["Tests/**", "Example/Swift-ExtensionTests/**"]
+example-app:
+  - changed-files:
+      - any-glob-to-any-file: ["Example/**"]
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ["**/*.md", "Sources/**/*.docc/**", "docs/**"]
+ci:
+  - changed-files:
+      - any-glob-to-any-file: [".github/**", "dangerfile.js", ".swift-format", ".coderabbit.yaml"]
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file: ["Package.swift"]
