@@ -14,13 +14,13 @@ struct ShakeDemo: View {
         title: "Shake on error",
         summary: "shake(trigger:) wobbles a view when a value changes. Skipped when Reduce Motion is on.",
         code: #"""
-        @State private var attempts = 0
+            @State private var attempts = 0
 
-        Text("Wrong password")
-            .padding()
-            .roundedBorder(.red, cornerRadius: 10)
-            .shake(trigger: attempts)
-        """#
+            Text("Wrong password")
+                .padding()
+                .roundedBorder(.red, cornerRadius: 10)
+                .shake(trigger: attempts)
+            """#
     )
 
     var body: some View {

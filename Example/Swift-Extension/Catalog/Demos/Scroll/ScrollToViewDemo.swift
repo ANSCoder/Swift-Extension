@@ -13,19 +13,19 @@ struct ScrollToViewDemo: View {
         title: "Scroll to view",
         summary: "Jump so a target row sits at the top. Mirrors UIScrollView scrollToView(view:animated:).",
         code: #"""
-        ScrollViewReader { proxy in
-            Button("Jump to row 20") {
-                withAnimation { proxy.scrollTo(20, anchor: .top) }
-            }
-            ScrollView {
-                LazyVStack {
-                    ForEach(0..<40, id: \.self) { row in
-                        Text("Row \(row)").id(row)
+            ScrollViewReader { proxy in
+                Button("Jump to row 20") {
+                    withAnimation { proxy.scrollTo(20, anchor: .top) }
+                }
+                ScrollView {
+                    LazyVStack {
+                        ForEach(0..<40, id: \.self) { row in
+                            Text("Row \(row)").id(row)
+                        }
                     }
                 }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

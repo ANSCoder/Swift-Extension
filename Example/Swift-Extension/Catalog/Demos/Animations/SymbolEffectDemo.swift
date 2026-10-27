@@ -14,17 +14,17 @@ struct SymbolEffectDemo: View {
         title: "SF Symbol effects",
         summary: "symbolEffect (iOS 17) bounces, pulses or cycles colors. Triggered by value or kept running with isActive.",
         code: #"""
-        @State private var waving = false
+            @State private var waving = false
 
-        Image(systemName: "heart.fill")
-            .symbolEffect(.bounce, value: play)
+            Image(systemName: "heart.fill")
+                .symbolEffect(.bounce, value: play)
 
-        Image(systemName: "wifi")
-            .symbolEffect(.variableColor.iterative, options: .repeating, isActive: waving)
+            Image(systemName: "wifi")
+                .symbolEffect(.variableColor.iterative, options: .repeating, isActive: waving)
 
-        Image(systemName: "bell.fill")
-            .symbolEffect(.pulse, options: .repeating)
-        """#
+            Image(systemName: "bell.fill")
+                .symbolEffect(.pulse, options: .repeating)
+            """#
     )
 
     var body: some View {

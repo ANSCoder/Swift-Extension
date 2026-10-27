@@ -15,12 +15,12 @@ struct ScaledMetricDemo: View {
         title: "Dynamic Type scaling",
         summary: "@ScaledMetric scales plain numbers with the user's text size. Toggle to see accessibility sizes.",
         code: #"""
-        @ScaledMetric(relativeTo: .title) private var iconSize: CGFloat = 40
+            @ScaledMetric(relativeTo: .title) private var iconSize: CGFloat = 40
 
-        Image(systemName: "star.fill")
-            .font(.system(size: iconSize))
-            .dynamicTypeSize(accessibilitySize ? .accessibility3 : .medium)
-        """#
+            Image(systemName: "star.fill")
+                .font(.system(size: iconSize))
+                .dynamicTypeSize(accessibilitySize ? .accessibility3 : .medium)
+            """#
     )
 
     var body: some View {

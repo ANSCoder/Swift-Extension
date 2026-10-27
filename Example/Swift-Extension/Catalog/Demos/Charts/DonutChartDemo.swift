@@ -16,23 +16,23 @@ struct DonutChartDemo: View {
         title: "Donut chart with selection",
         summary: "SectorMark (iOS 17) with rounded segments, angle selection and a live center label.",
         code: #"""
-        import Charts
+            import Charts
 
-        @State private var angleSelection: Double?
+            @State private var angleSelection: Double?
 
-        Chart(data) { item in
-            SectorMark(
-                angle: .value("Share", item.value),
-                innerRadius: .ratio(0.62),
-                angularInset: 2
-            )
-            .cornerRadius(6)
-            .foregroundStyle(by: .value("Source", item.label))
-            .opacity(selected == nil || selected?.label == item.label ? 1 : 0.35)
-        }
-        .chartAngleSelection(value: $angleSelection)   // iOS 17
-        .chartLegend(.hidden)
-        """#
+            Chart(data) { item in
+                SectorMark(
+                    angle: .value("Share", item.value),
+                    innerRadius: .ratio(0.62),
+                    angularInset: 2
+                )
+                .cornerRadius(6)
+                .foregroundStyle(by: .value("Source", item.label))
+                .opacity(selected == nil || selected?.label == item.label ? 1 : 0.35)
+            }
+            .chartAngleSelection(value: $angleSelection)   // iOS 17
+            .chartLegend(.hidden)
+            """#
     )
 
     private var total: Double { data.reduce(0) { $0 + $1.value } }

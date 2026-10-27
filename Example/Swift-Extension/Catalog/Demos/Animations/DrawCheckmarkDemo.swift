@@ -16,22 +16,22 @@ struct DrawCheckmarkDemo: View {
         title: "Draw-on checkmark",
         summary: "trim(from:to:) on a Shape draws a stroke on over time. Ring first, then the check, like a success state.",
         code: #"""
-        struct CheckmarkShape: Shape {
-            func path(in rect: CGRect) -> Path {
-                var path = Path()
-                path.move(to: CGPoint(x: rect.width * 0.20, y: rect.height * 0.52))
-                path.addLine(to: CGPoint(x: rect.width * 0.42, y: rect.height * 0.74))
-                path.addLine(to: CGPoint(x: rect.width * 0.80, y: rect.height * 0.30))
-                return path
+            struct CheckmarkShape: Shape {
+                func path(in rect: CGRect) -> Path {
+                    var path = Path()
+                    path.move(to: CGPoint(x: rect.width * 0.20, y: rect.height * 0.52))
+                    path.addLine(to: CGPoint(x: rect.width * 0.42, y: rect.height * 0.74))
+                    path.addLine(to: CGPoint(x: rect.width * 0.80, y: rect.height * 0.30))
+                    return path
+                }
             }
-        }
 
-        Circle().trim(from: 0, to: ring)
-            .stroke(.green, style: StrokeStyle(lineWidth: 10, lineCap: .round))
-            .rotationEffect(.degrees(-90))
-        CheckmarkShape().trim(from: 0, to: check)
-            .stroke(.green, style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
-        """#
+            Circle().trim(from: 0, to: ring)
+                .stroke(.green, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .rotationEffect(.degrees(-90))
+            CheckmarkShape().trim(from: 0, to: check)
+                .stroke(.green, style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
+            """#
     )
 
     var body: some View {

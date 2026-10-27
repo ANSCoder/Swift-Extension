@@ -16,20 +16,20 @@ struct ConditionalModifiersDemo: View {
         title: "Conditional modifiers",
         summary: "if(_:transform:), ifLet(_:transform:) and hidden(if:) apply modifiers without ternary soup.",
         code: #"""
-        @State private var highlighted = false
-        @State private var nickname: String?
+            @State private var highlighted = false
+            @State private var nickname: String?
 
-        Text("Styled when highlighted")
-            .if(highlighted) { $0.foregroundStyle(.orange).bold() }
+            Text("Styled when highlighted")
+                .if(highlighted) { $0.foregroundStyle(.orange).bold() }
 
-        Text("Revealed when highlighted")
-            .hidden(if: !highlighted)
+            Text("Revealed when highlighted")
+                .hidden(if: !highlighted)
 
-        Text("Hi")
-            .ifLet(nickname) { view, name in
-                view.accessibilityLabel("Hi, \(name)")
-            }
-        """#
+            Text("Hi")
+                .ifLet(nickname) { view, name in
+                    view.accessibilityLabel("Hi, \(name)")
+                }
+            """#
     )
 
     var body: some View {

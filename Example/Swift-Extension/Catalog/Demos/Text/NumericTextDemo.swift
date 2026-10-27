@@ -14,15 +14,15 @@ struct NumericTextDemo: View {
         title: "Numeric text transition",
         summary: "contentTransition(.numericText(value:)) rolls digits up or down as the value changes (iOS 17).",
         code: #"""
-        @State private var count = 0
+            @State private var count = 0
 
-        Text("\(count)")
-            .font(.system(size: 56, weight: .bold, design: .rounded))
-            .monospacedDigit()
-            .contentTransition(.numericText(value: Double(count)))
+            Text("\(count)")
+                .font(.system(size: 56, weight: .bold, design: .rounded))
+                .monospacedDigit()
+                .contentTransition(.numericText(value: Double(count)))
 
-        Button("+1") { withAnimation { count += 1 } }
-        """#
+            Button("+1") { withAnimation { count += 1 } }
+            """#
     )
 
     var body: some View {

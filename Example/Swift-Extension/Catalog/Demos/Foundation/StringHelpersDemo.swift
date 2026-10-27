@@ -15,12 +15,12 @@ struct StringHelpersDemo: View {
         title: "String helpers",
         summary: "trim, firstLetterCapitalized, initials, removeSpace and isValidURL.",
         code: #"""
-        "  anand nimje  ".trim                  // "anand nimje  "
-        "anand nimje".firstLetterCapitalized   // "Anand nimje"
-        "Anand Nimje".initials                 // "AN"
-        "https://swift.org".isValidURL         // true
-        "swift.org".isValidURL                 // false
-        """#
+            "  anand nimje  ".trim                  // "anand nimje  "
+            "anand nimje".firstLetterCapitalized   // "Anand nimje"
+            "Anand Nimje".initials                 // "AN"
+            "https://swift.org".isValidURL         // true
+            "swift.org".isValidURL                 // false
+            """#
     )
 
     var body: some View {

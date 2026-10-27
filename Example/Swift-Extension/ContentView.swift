@@ -59,7 +59,8 @@ struct ContentView: View {
     private var visibleExamples: [Example] {
         Example.allCases.filter { example in
             let matchesCategory = selection == nil || example.info.category == selection
-            let matchesQuery = query.isEmpty
+            let matchesQuery =
+                query.isEmpty
                 || example.info.title.localizedCaseInsensitiveContains(query)
                 || example.info.summary.localizedCaseInsensitiveContains(query)
             return matchesCategory && matchesQuery

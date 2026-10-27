@@ -27,32 +27,34 @@ import Foundation
 
 public extension String {
 
-    /// The string without leading and trailing spaces and tabs.
+    /// The string with leading and trailing spaces and tabs removed.
     var trim: String {
         trimmingCharacters(in: .whitespaces)
     }
 
-    /// The string without leading and trailing whitespace and newlines.
+    /// The string with leading and trailing whitespace and newlines removed.
     var trimLine: String {
         trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    /// `true` when the string is non-empty and contains only ASCII letters and digits.
+    /// A Boolean value that indicates whether the string is non-empty and contains only ASCII letters and digits.
     var isAlphanumeric: Bool {
         isNotEmpty && allSatisfy { $0.isASCII && ($0.isLetter || $0.isNumber) }
     }
 
-    /// `true` when the whole string is an email address.
+    /// A Boolean value that indicates whether the whole string is an email address.
+    ///
+    /// This checks a practical pattern, not the full RFC 5322 grammar.
     var isEmail: Bool {
         wholeMatch(of: #/[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}/#) != nil
     }
 
-    /// `true` when the whole string is a 9 or 10 digit mobile number starting with 1-9.
+    /// A Boolean value that indicates whether the whole string is a nine- or ten-digit mobile number that starts with 1 through 9.
     var isMobile: Bool {
         wholeMatch(of: #/[1-9][0-9]{8}[0-9]?/#) != nil
     }
 
-    /// `true` when the string is an `http` or `https` URL with a host.
+    /// A Boolean value that indicates whether the string is an absolute `http` or `https` URL with a host.
     var isValidURL: Bool {
         guard let url = URL(string: self), let scheme = url.scheme?.lowercased(),
             scheme == "http" || scheme == "https"
@@ -62,7 +64,11 @@ public extension String {
         return url.host?.isEmpty == false
     }
 
-    /// Uppercased initials of the first two words, e.g. `Anand Nimje` is `AN`.
+    /// The uppercased initials of the first two words.
+    ///
+    /// ```swift
+    /// "Anand Nimje".initials   // "AN"
+    /// ```
     var initials: String {
         components(separatedBy: .whitespaces)
             .compactMap(\.first)
@@ -71,37 +77,57 @@ public extension String {
             .joined()
     }
 
-    /// Converts a `yyyy/M/dd` date string to `MMMM dd, yyyy`, e.g. `2026/1/05` to `January 05, 2026`. Returns `nil` when it cannot be parsed.
+    /// Converts a date written as `yyyy/M/dd` to a long date.
+    ///
+    /// ```swift
+    /// "".changeDate("2026/1/05")   // "January 05, 2026"
+    /// ```
+    ///
+    /// The receiver isn't used. Pass the date string as the argument.
+    ///
+    /// - Parameter mydate: A date in the form `yyyy/M/dd`, such as `"2026/1/05"`.
+    /// - Returns: The date as `MMMM dd, yyyy`, or `nil` if the input can't be parsed.
     func changeDate(_ mydate: String) -> String? {
         guard let date = DateFormatter.posix("yyyy/M/dd").date(from: mydate) else { return nil }
         return DateFormatter.posix("MMMM dd, yyyy").string(from: date)
     }
 
-    /// The string with its first character uppercased, e.g. `hello` becomes `Hello`.
+    /// The string with its first character uppercased.
+    ///
+    /// ```swift
+    /// "hello".firstLetterCapitalized   // "Hello"
+    /// ```
     var firstLetterCapitalized: String {
         prefix(1).uppercased() + dropFirst()
     }
 
-    /// Uppercases the first character in place.
+    /// Uppercases the first character of the string in place.
     mutating func capitalizeFirstLetter() {
         self = firstLetterCapitalized
     }
 
-    /// The string without leading and trailing spaces and tabs. Same as ``trim``.
+    /// The string with leading and trailing spaces and tabs removed.
+    ///
+    /// - Important: This is the same as ``trim``. Prefer `trim` in new code.
     func trimWhiteSpace() -> String {
         trim
     }
 
-    /// The string without any spaces or tabs.
+    /// The string with all spaces and tabs removed.
     var removeSpace: String {
         components(separatedBy: .whitespaces).joined()
     }
 
-    /// The string cut to `length` characters, with `trailing` appended only when something was cut.
+    /// Returns the string shortened to a number of characters, followed by a suffix if characters were removed.
     ///
     /// ```swift
     /// "Swift Extension".truncated(to: 5)   // "Swift…"
     /// ```
+    ///
+    /// - Parameters:
+    ///   - length: The maximum number of characters to keep before the suffix.
+    ///   - trailing: The text to append when characters are removed.
+    /// - Returns: The original string if it already fits, otherwise the shortened string with `trailing`.
     func truncated(to length: Int, trailing: String = "…") -> String {
         guard length >= 0, count > length else { return self }
         return prefix(length) + trailing

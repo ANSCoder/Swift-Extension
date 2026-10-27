@@ -18,30 +18,30 @@ struct CardStackDemo: View {
         title: "Swipeable card stack",
         summary: "DragGesture on the top card, depth-based scale and offset for the rest. Fly off past a threshold, spring back otherwise.",
         code: #"""
-        @State private var cards = Array(0..<5)
-        @State private var drag = CGSize.zero
+            @State private var cards = Array(0..<5)
+            @State private var drag = CGSize.zero
 
-        ZStack {
-            ForEach(Array(cards.enumerated().reversed()), id: \.element) { depth, card in
-                CardView(card)
-                    .scaleEffect(1 - CGFloat(depth) * 0.06)
-                    .offset(x: depth == 0 ? drag.width : 0, y: CGFloat(depth) * 14)
-                    .rotationEffect(.degrees(depth == 0 ? Double(drag.width / 18) : 0))
-                    .allowsHitTesting(depth == 0)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { drag = $0.translation }
-                            .onEnded { value in
-                                if abs(value.translation.width) > 110 {
-                                    // fly off, then remove the top card
-                                } else {
-                                    withAnimation(.spring) { drag = .zero }
+            ZStack {
+                ForEach(Array(cards.enumerated().reversed()), id: \.element) { depth, card in
+                    CardView(card)
+                        .scaleEffect(1 - CGFloat(depth) * 0.06)
+                        .offset(x: depth == 0 ? drag.width : 0, y: CGFloat(depth) * 14)
+                        .rotationEffect(.degrees(depth == 0 ? Double(drag.width / 18) : 0))
+                        .allowsHitTesting(depth == 0)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { drag = $0.translation }
+                                .onEnded { value in
+                                    if abs(value.translation.width) > 110 {
+                                        // fly off, then remove the top card
+                                    } else {
+                                        withAnimation(.spring) { drag = .zero }
+                                    }
                                 }
-                            }
-                    )
+                        )
+                }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {
@@ -64,26 +64,35 @@ struct CardStackDemo: View {
     }
 
     private func cardView(_ card: Int, depth: Int) -> some View {
-        let isTop = depth == 0
-        let color = Color(hex: colors[card % colors.count])
+        let isTop: Bool = depth == 0
+        let color: Color = Color(hex: colors[card % colors.count])
+        let scale: CGFloat = 1 - CGFloat(depth) * 0.06
+        let stackOffset: CGFloat = CGFloat(depth) * 14
+        let offsetX: CGFloat = isTop ? drag.width : 0
+        let offsetY: CGFloat = isTop ? stackOffset + drag.height / 6 : stackOffset
+        let tilt: Double = isTop ? Double(drag.width / 18) : 0
         return RoundedRectangle(cornerRadius: 22, style: .continuous)
             .fill(LinearGradient(colors: [color, color.opacity(0.75)], startPoint: .topLeading, endPoint: .bottomTrailing))
             .frame(width: 240, height: 180)
-            .overlay {
-                VStack(spacing: 8) {
-                    Image(systemName: symbols[card % symbols.count]).font(.largeTitle)
-                    Text("Card \(card + 1)").font(.headline)
-                }
-                .foregroundStyle(.white)
-            }
+            .overlay { cardFace(card) }
             .shadow(color: .black.opacity(0.15), radius: 10, y: 6)
-            .scaleEffect(1 - CGFloat(depth) * 0.06)
-            .offset(x: isTop ? drag.width : 0, y: CGFloat(depth) * 14 + (isTop ? drag.height / 6 : 0))
-            .rotationEffect(.degrees(isTop ? Double(drag.width / 18) : 0))
+            .scaleEffect(scale)
+            .offset(x: offsetX, y: offsetY)
+            .rotationEffect(.degrees(tilt))
             .animation(.spring(response: 0.4, dampingFraction: 0.75), value: depth)
             .allowsHitTesting(isTop)
             .gesture(swipe)
             .accessibilityLabel("Card \(card + 1)")
+    }
+
+    private func cardFace(_ card: Int) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: symbols[card % symbols.count])
+                .font(.largeTitle)
+            Text("Card \(card + 1)")
+                .font(.headline)
+        }
+        .foregroundStyle(.white)
     }
 
     private var swipe: some Gesture {

@@ -15,20 +15,20 @@ struct RadarPulseDemo: View {
         title: "Radar pulse",
         summary: "Three rings offset in phase scale up and fade out. Pure math on TimelineView time, no state.",
         code: #"""
-        TimelineView(.animation(paused: paused)) { timeline in
-            let t = timeline.date.timeIntervalSinceReferenceDate
-            ZStack {
-                ForEach(0..<3, id: \.self) { index in
-                    let phase = ((t / 2.4) + Double(index) / 3).truncatingRemainder(dividingBy: 1)
-                    Circle()
-                        .strokeBorder(.teal, lineWidth: 3)
-                        .scaleEffect(0.15 + phase * 0.85)
-                        .opacity(1 - phase)
+            TimelineView(.animation(paused: paused)) { timeline in
+                let t = timeline.date.timeIntervalSinceReferenceDate
+                ZStack {
+                    ForEach(0..<3, id: \.self) { index in
+                        let phase = ((t / 2.4) + Double(index) / 3).truncatingRemainder(dividingBy: 1)
+                        Circle()
+                            .strokeBorder(.teal, lineWidth: 3)
+                            .scaleEffect(0.15 + phase * 0.85)
+                            .opacity(1 - phase)
+                    }
+                    Image(systemName: "dot.radiowaves.left.and.right")
                 }
-                Image(systemName: "dot.radiowaves.left.and.right")
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

@@ -40,25 +40,28 @@ private struct ShimmerModifier: ViewModifier {
 }
 
 public extension View {
-    /// Sweeps a soft highlight across the view, the classic loading-skeleton effect.
+    /// Sweeps a soft highlight across the view, as in a loading skeleton.
     ///
     /// ```swift
-    /// RoundedRectangle(cornerRadius: 8)
-    ///     .fill(.gray.opacity(0.3))
-    ///     .frame(height: 16)
-    ///     .shimmer(isLoading)
+    /// RoundedRectangle(cornerRadius: 8).fill(.gray.opacity(0.3)).shimmer(isLoading)
     /// ```
+    ///
     /// The sweep is skipped when Reduce Motion is on.
+    ///
+    /// - Parameter isActive: Whether the highlight animates.
+    /// - Returns: The view with the shimmer attached.
     func shimmer(_ isActive: Bool = true) -> some View {
         modifier(ShimmerModifier(isActive: isActive))
     }
 
-    /// Redacts the view as a placeholder and adds `shimmer(_:)` while `isLoading` is `true`.
+    /// Redacts the view as a placeholder and adds a shimmer while loading.
     ///
     /// ```swift
-    /// ProfileRow(user: user)
-    ///     .redactedShimmer(isLoading)
+    /// ProfileRow(user: user).redactedShimmer(isLoading)
     /// ```
+    ///
+    /// - Parameter isLoading: Whether the view is shown as a loading placeholder.
+    /// - Returns: The redacted view with the shimmer attached while loading.
     func redactedShimmer(_ isLoading: Bool) -> some View {
         redacted(reason: isLoading ? .placeholder : [])
             .shimmer(isLoading)

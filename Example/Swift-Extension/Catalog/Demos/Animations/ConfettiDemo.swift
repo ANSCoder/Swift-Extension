@@ -16,22 +16,22 @@ struct ConfettiDemo: View {
         title: "Confetti burst",
         summary: "A Canvas inside TimelineView draws 90 particles from a physics formula. No per-particle views.",
         code: #"""
-        TimelineView(.animation(paused: startDate == nil)) { timeline in
-            Canvas { context, size in
-                guard let start = startDate else { return }
-                let t = timeline.date.timeIntervalSince(start)
-                for p in particles {
-                    let x = origin.x + cos(p.angle) * p.speed * t
-                    let y = origin.y + sin(p.angle) * p.speed * t + 0.5 * 520 * t * t   // gravity
-                    var layer = context
-                    layer.opacity = max(0, 1 - t / duration)
-                    layer.translateBy(x: x, y: y)
-                    layer.rotate(by: .radians(p.spin * t))
-                    layer.fill(Path(roundedRect: rect, cornerRadius: 1.5), with: .color(color))
+            TimelineView(.animation(paused: startDate == nil)) { timeline in
+                Canvas { context, size in
+                    guard let start = startDate else { return }
+                    let t = timeline.date.timeIntervalSince(start)
+                    for p in particles {
+                        let x = origin.x + cos(p.angle) * p.speed * t
+                        let y = origin.y + sin(p.angle) * p.speed * t + 0.5 * 520 * t * t   // gravity
+                        var layer = context
+                        layer.opacity = max(0, 1 - t / duration)
+                        layer.translateBy(x: x, y: y)
+                        layer.rotate(by: .radians(p.spin * t))
+                        layer.fill(Path(roundedRect: rect, cornerRadius: 1.5), with: .color(color))
+                    }
                 }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

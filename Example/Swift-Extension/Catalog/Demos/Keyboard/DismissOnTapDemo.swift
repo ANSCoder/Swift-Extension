@@ -16,15 +16,15 @@ struct DismissOnTapDemo: View {
         title: "Dismiss keyboard on tap",
         summary: "dismissKeyboardOnTap() resigns the first responder when empty space is tapped (library helper).",
         code: #"""
-        @State private var text = ""
+            @State private var text = ""
 
-        VStack {
-            TextField("Type here", text: $text)
-                .textFieldStyle(.roundedBorder)
-            Spacer()
-        }
-        .dismissKeyboardOnTap()
-        """#
+            VStack {
+                TextField("Type here", text: $text)
+                    .textFieldStyle(.roundedBorder)
+                Spacer()
+            }
+            .dismissKeyboardOnTap()
+            """#
     )
 
     var body: some View {

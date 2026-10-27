@@ -13,23 +13,23 @@ struct PinnedHeadersDemo: View {
         title: "Pinned section headers",
         summary: "LazyVStack(pinnedViews:) keeps each section header on screen while its rows scroll.",
         code: #"""
-        ScrollView {
-            LazyVStack(pinnedViews: [.sectionHeaders]) {
-                ForEach(0..<3, id: \.self) { section in
-                    Section {
-                        ForEach(0..<6, id: \.self) { item in
-                            Text("Item \(section).\(item)")
+            ScrollView {
+                LazyVStack(pinnedViews: [.sectionHeaders]) {
+                    ForEach(0..<3, id: \.self) { section in
+                        Section {
+                            ForEach(0..<6, id: \.self) { item in
+                                Text("Item \(section).\(item)")
+                            }
+                        } header: {
+                            Text("Section \(section)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(8)
+                                .background(.thinMaterial)
                         }
-                    } header: {
-                        Text("Section \(section)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(8)
-                            .background(.thinMaterial)
                     }
                 }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

@@ -9,11 +9,19 @@ import UIKit
 public extension UIView {
 
     /// Adds each view as a subview.
+    ///
+    /// - Parameter views: The views to add, in order.
     func addSubviews(_ views: UIView...) {
         views.forEach { addSubview($0) }
     }
 
-    /// Adds the view to `superview` if needed, then pins its edges to the superview's, inset by `insets`. Leading and trailing follow the layout direction.
+    /// Adds the view to a superview, if needed, and pins its edges to the superview's edges.
+    ///
+    /// Leading and trailing follow the layout direction, so the insets mirror in right-to-left languages.
+    ///
+    /// - Parameters:
+    ///   - superview: The view to pin to.
+    ///   - insets: The space between the view and each edge of the superview. The default is zero.
     func pinToEdges(of superview: UIView, insets: NSDirectionalEdgeInsets = .zero) {
         if self.superview !== superview {
             superview.addSubview(self)

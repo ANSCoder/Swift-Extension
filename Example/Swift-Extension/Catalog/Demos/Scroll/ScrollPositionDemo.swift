@@ -14,20 +14,20 @@ struct ScrollPositionDemo: View {
         title: "Read & set scroll position",
         summary: "scrollPosition(id:) reads the visible row and drives it from state (iOS 17). No proxy needed.",
         code: #"""
-        @State private var rowID: Int?
+            @State private var rowID: Int?
 
-        ScrollView {
-            LazyVStack {
-                ForEach(0..<40, id: \.self) { row in
-                    Text("Row \(row)").id(row)
+            ScrollView {
+                LazyVStack {
+                    ForEach(0..<40, id: \.self) { row in
+                        Text("Row \(row)").id(row)
+                    }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
-        }
-        .scrollPosition(id: $rowID)
+            .scrollPosition(id: $rowID)
 
-        Button("Row 20") { rowID = 20 }
-        """#
+            Button("Row 20") { rowID = 20 }
+            """#
     )
 
     var body: some View {

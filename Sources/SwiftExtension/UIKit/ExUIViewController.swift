@@ -29,6 +29,10 @@ import UIKit
 public extension UIViewController {
 
     /// Presents an alert with a single OK button.
+    ///
+    /// - Parameters:
+    ///   - title: The title of the alert.
+    ///   - message: The message of the alert.
     func showAlertView(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -41,14 +45,19 @@ public extension UIViewController {
         showAlertView(title: title, message: message)
     }
 
-    /// Shows `message`, then dismisses it after `duration` and calls `completion`.
+    /// Presents a message that dismisses itself after a delay, then calls a completion handler.
     ///
     /// ```swift
-    /// showAlertWithMessage("Saved", duration: .seconds(2)) { navigationController?.popViewController(animated: true) }
+    /// showAlertWithMessage("Saved", duration: .seconds(2)) {
+    ///     navigationController?.popViewController(animated: true)
+    /// }
     /// ```
-    /// The wait is a `Task` on the main actor, not a dispatch timer, so it never blocks and holds the alert weakly.
-    /// - Important: A message that disappears on its own can be missed by people who read slowly or use VoiceOver.
-    ///   Use `showAlertView(title:message:)` for anything the user must read.
+    ///
+    /// - Important: A message that disappears on its own can be missed by people who read slowly or use VoiceOver. Use ``showAlertView(title:message:)`` for anything the user must read.
+    /// - Parameters:
+    ///   - message: The text of the message.
+    ///   - duration: How long the message stays on screen. The default is three seconds.
+    ///   - completion: A closure that runs on the main actor after the message is dismissed.
     func showAlertWithMessage(
         _ message: String,
         duration: Duration = .seconds(3),

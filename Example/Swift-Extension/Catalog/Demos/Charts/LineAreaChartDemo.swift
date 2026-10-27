@@ -17,25 +17,25 @@ struct LineAreaChartDemo: View {
         title: "Line & area chart",
         summary: "Smoothed line over a gradient area with a scrubbing tooltip. Play redraws it left to right.",
         code: #"""
-        import Charts
+            import Charts
 
-        Chart {
-            ForEach(points) { point in
-                AreaMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
-                    .interpolationMethod(.catmullRom)
-                    .foregroundStyle(LinearGradient(
-                        colors: [Palette.accent.opacity(0.35), Palette.accent.opacity(0.02)],
-                        startPoint: .top, endPoint: .bottom))
-                LineMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
-                    .interpolationMethod(.catmullRom)
-                    .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
-                    .foregroundStyle(Palette.accent)
+            Chart {
+                ForEach(points) { point in
+                    AreaMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
+                        .interpolationMethod(.catmullRom)
+                        .foregroundStyle(LinearGradient(
+                            colors: [Palette.accent.opacity(0.35), Palette.accent.opacity(0.02)],
+                            startPoint: .top, endPoint: .bottom))
+                    LineMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
+                        .interpolationMethod(.catmullRom)
+                        .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
+                        .foregroundStyle(Palette.accent)
+                }
             }
-        }
-        .chartXSelection(value: $selectedDate)
-        .chartYScale(domain: .automatic(includesZero: false))
-        .mask(alignment: .leading) { Rectangle().scaleEffect(x: reveal, anchor: .leading) }
-        """#
+            .chartXSelection(value: $selectedDate)
+            .chartYScale(domain: .automatic(includesZero: false))
+            .mask(alignment: .leading) { Rectangle().scaleEffect(x: reveal, anchor: .leading) }
+            """#
     )
 
     private var selectedPoint: TimeSeriesPoint? {
@@ -50,11 +50,12 @@ struct LineAreaChartDemo: View {
             ForEach(points) { point in
                 AreaMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
                     .interpolationMethod(.catmullRom)
-                    .foregroundStyle(LinearGradient(
-                        colors: [Palette.accent.opacity(0.35), Palette.accent.opacity(0.02)],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    ))
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [Palette.accent.opacity(0.35), Palette.accent.opacity(0.02)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ))
                 LineMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
                     .interpolationMethod(.catmullRom)
                     .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))

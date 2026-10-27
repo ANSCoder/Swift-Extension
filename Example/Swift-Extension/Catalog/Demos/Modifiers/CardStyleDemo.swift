@@ -15,11 +15,11 @@ struct CardStyleDemo: View {
         title: "Card style & rounded border",
         summary: "cardStyle(cornerRadius:) adds padding, background and shadow. roundedBorder adds a stroke.",
         code: #"""
-        Text("Card title")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .cardStyle(cornerRadius: 12)
-            .roundedBorder(.secondary.opacity(0.4), cornerRadius: 12)
-        """#
+            Text("Card title")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .cardStyle(cornerRadius: 12)
+                .roundedBorder(.secondary.opacity(0.4), cornerRadius: 12)
+            """#
     )
 
     var body: some View {

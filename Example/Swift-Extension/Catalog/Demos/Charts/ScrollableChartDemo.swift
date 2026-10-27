@@ -17,18 +17,18 @@ struct ScrollableChartDemo: View {
         title: "Scrollable time series",
         summary: "Two weeks visible out of 90 days. Scroll sideways; the chart reports its position (iOS 17).",
         code: #"""
-        import Charts
+            import Charts
 
-        @State private var scrollX = Date.now
+            @State private var scrollX = Date.now
 
-        Chart(points) { point in
-            LineMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
-                .interpolationMethod(.catmullRom)
-        }
-        .chartScrollableAxes(.horizontal)
-        .chartXVisibleDomain(length: 14 * 86_400)   // seconds
-        .chartScrollPosition(x: $scrollX)
-        """#
+            Chart(points) { point in
+                LineMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
+                    .interpolationMethod(.catmullRom)
+            }
+            .chartScrollableAxes(.horizontal)
+            .chartXVisibleDomain(length: 14 * 86_400)   // seconds
+            .chartScrollPosition(x: $scrollX)
+            """#
     )
 
     private var visibleRange: String {
@@ -47,11 +47,12 @@ struct ScrollableChartDemo: View {
             Chart(points) { point in
                 AreaMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
                     .interpolationMethod(.catmullRom)
-                    .foregroundStyle(LinearGradient(
-                        colors: [Palette.series[1].opacity(0.3), Palette.series[1].opacity(0.02)],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    ))
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [Palette.series[1].opacity(0.3), Palette.series[1].opacity(0.02)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ))
                 LineMark(x: .value("Date", point.date, unit: .day), y: .value("Visits", point.value))
                     .interpolationMethod(.catmullRom)
                     .lineStyle(StrokeStyle(lineWidth: 2.5, lineCap: .round))
@@ -77,9 +78,12 @@ struct ScrollableChartDemo: View {
         }
         .onChange(of: play) { _, _ in
             jumpedToStart.toggle()
-            let target = jumpedToStart ? points.first?.date : points.last.flatMap {
-                Calendar.current.date(byAdding: .day, value: -14, to: $0.date)
-            }
+            let target =
+                jumpedToStart
+                ? points.first?.date
+                : points.last.flatMap {
+                    Calendar.current.date(byAdding: .day, value: -14, to: $0.date)
+                }
             withAnimation(.smooth(duration: 0.9)) {
                 scrollX = target ?? scrollX
             }

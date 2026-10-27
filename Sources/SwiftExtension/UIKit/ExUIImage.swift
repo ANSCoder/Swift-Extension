@@ -28,12 +28,17 @@ import UIKit
 
 public extension UIImage {
 
-    /// PNG data encoded as base64, or `nil` when the image cannot be encoded.
+    /// The image as base64-encoded PNG data.
+    ///
+    /// The value is `nil` when the image can't be encoded as PNG.
     var toBase64String: String? {
         pngData()?.base64EncodedString(options: .lineLength64Characters)
     }
 
-    /// A copy scaled by `scale` in both dimensions.
+    /// Returns a copy of the image scaled by the same factor in both dimensions.
+    ///
+    /// - Parameter scale: The factor to multiply the width and height by.
+    /// - Returns: The scaled image.
     func resized(by scale: CGFloat) -> UIImage {
         let size = CGSize(width: self.size.width * scale, height: self.size.height * scale)
         return UIGraphicsImageRenderer(size: size).image { _ in
@@ -41,13 +46,16 @@ public extension UIImage {
         }
     }
 
-    /// Half-size copy of the image.
+    /// A copy of the image at half its width and height.
     var halfSizeImage: UIImage? { resized(by: 0.5) }
 
-    /// Quarter-size copy of the image.
+    /// A copy of the image at a quarter of its width and height.
     var quarterhalfSizeImage: UIImage? { resized(by: 0.25) }
 
-    /// Loads an image from a file path, e.g. one inside the Documents directory.
+    /// Loads an image from a file path, such as a file in the Documents directory.
+    ///
+    /// - Parameter path: The absolute path to the image file.
+    /// - Returns: The image, or `nil` if the file can't be read or decoded.
     func loadImageFromDocumentDirPath(_ path: String) -> UIImage? {
         UIImage(contentsOfFile: path)
     }

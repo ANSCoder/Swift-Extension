@@ -14,25 +14,25 @@ struct KpiCardsDemo: View {
         title: "KPI cards with sparklines",
         summary: "Headline number, change badge and a hidden-axis sparkline. Direction is shown by arrow, not only color.",
         code: #"""
-        struct KpiMetric: Identifiable {
-            let title: String
-            let value: String
-            let delta: Double      // percent vs previous period
-            let trend: [Double]
-            var id: String { title }
-        }
-
-        // Sparkline: a Chart with both axes hidden
-        Chart {
-            ForEach(Array(metric.trend.enumerated()), id: \.offset) { index, value in
-                LineMark(x: .value("Day", index), y: .value("Value", value))
-                    .interpolationMethod(.catmullRom)
+            struct KpiMetric: Identifiable {
+                let title: String
+                let value: String
+                let delta: Double      // percent vs previous period
+                let trend: [Double]
+                var id: String { title }
             }
-        }
-        .chartXAxis(.hidden)
-        .chartYAxis(.hidden)
-        .chartYScale(domain: .automatic(includesZero: false))
-        """#
+
+            // Sparkline: a Chart with both axes hidden
+            Chart {
+                ForEach(Array(metric.trend.enumerated()), id: \.offset) { index, value in
+                    LineMark(x: .value("Day", index), y: .value("Value", value))
+                        .interpolationMethod(.catmullRom)
+                }
+            }
+            .chartXAxis(.hidden)
+            .chartYAxis(.hidden)
+            .chartYScale(domain: .automatic(includesZero: false))
+            """#
     )
 
     var body: some View {

@@ -14,14 +14,14 @@ struct ImplicitAnimationDemo: View {
         title: "Implicit animation",
         summary: "animation(_:value:) animates any change to the value without withAnimation.",
         code: #"""
-        @State private var on = false
+            @State private var on = false
 
-        RoundedRectangle(cornerRadius: on ? 70 : 12)
-            .fill(on ? .pink : .teal)
-            .frame(width: 140, height: 140)
-            .rotationEffect(.degrees(on ? 90 : 0))
-            .animation(.easeInOut(duration: 0.6), value: on)
-        """#
+            RoundedRectangle(cornerRadius: on ? 70 : 12)
+                .fill(on ? .pink : .teal)
+                .frame(width: 140, height: 140)
+                .rotationEffect(.degrees(on ? 90 : 0))
+                .animation(.easeInOut(duration: 0.6), value: on)
+            """#
     )
 
     var body: some View {

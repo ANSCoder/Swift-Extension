@@ -15,10 +15,10 @@ struct NumberHelpersDemo: View {
         title: "Clamp & round numbers",
         summary: "clamped(to:) limits any Comparable to a range. rounded(toPlaces:) trims decimals.",
         code: #"""
-        15.clamped(to: 0...10)        // 10
-        (-3.0).clamped(to: 0...10)    // 0
-        3.14159.rounded(toPlaces: 2)  // 3.14
-        """#
+            15.clamped(to: 0...10)        // 10
+            (-3.0).clamped(to: 0...10)    // 0
+            3.14159.rounded(toPlaces: 2)  // 3.14
+            """#
     )
 
     var body: some View {

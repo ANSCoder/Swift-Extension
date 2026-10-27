@@ -13,15 +13,15 @@ struct PhaseAnimatorDemo: View {
         title: "Phase animator",
         summary: "PhaseAnimator steps through a list of phases (iOS 17). Multi-step motion with no state machine.",
         code: #"""
-        PhaseAnimator([false, true, false], trigger: play) { up in
-            Image(systemName: "paperplane.fill")
-                .font(.system(size: 56))
-                .offset(y: up ? -60 : 0)
-                .scaleEffect(up ? 1.2 : 1)
-        } animation: { up in
-            up ? .bouncy : .smooth
-        }
-        """#
+            PhaseAnimator([false, true, false], trigger: play) { up in
+                Image(systemName: "paperplane.fill")
+                    .font(.system(size: 56))
+                    .offset(y: up ? -60 : 0)
+                    .scaleEffect(up ? 1.2 : 1)
+            } animation: { up in
+                up ? .bouncy : .smooth
+            }
+            """#
     )
 
     var body: some View {

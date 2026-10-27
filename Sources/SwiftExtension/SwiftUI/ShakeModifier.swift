@@ -22,7 +22,16 @@ private struct ShakeModifier<Trigger: Equatable>: ViewModifier {
 }
 
 public extension View {
-    /// Shakes the view each time `trigger` changes. Skipped when Reduce Motion is on.
+    /// Shakes the view each time the trigger value changes.
+    ///
+    /// ```swift
+    /// Text("Wrong password").shake(trigger: attempts)
+    /// ```
+    ///
+    /// The shake is skipped when Reduce Motion is on.
+    ///
+    /// - Parameter trigger: A value that starts a shake when it changes.
+    /// - Returns: The view with the shake effect attached.
     func shake<Trigger: Equatable>(trigger: Trigger) -> some View {
         modifier(ShakeModifier(trigger: trigger))
     }

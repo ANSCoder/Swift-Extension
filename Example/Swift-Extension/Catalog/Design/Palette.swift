@@ -31,8 +31,9 @@ enum Palette {
     static let series: [Color] = ["6366F1", "14B8A6", "F59E0B", "EC4899", "38BDF8"].map { Color(hex: $0) }
 
     private static func adaptive(light: String, dark: String) -> Color {
-        Color(uiColor: UIColor { traits in
-            traits.userInterfaceStyle == .dark ? UIColor(hex: dark) : UIColor(hex: light)
-        })
+        Color(
+            uiColor: UIColor { traits in
+                traits.userInterfaceStyle == .dark ? UIColor(hex: dark) : UIColor(hex: light)
+            })
     }
 }

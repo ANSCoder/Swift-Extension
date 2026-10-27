@@ -15,21 +15,21 @@ struct TransitionsDemo: View {
         title: "Transitions",
         summary: "Insert and remove effects with asymmetric(insertion:removal:). Pair with withAnimation.",
         code: #"""
-        @State private var shown = true
+            @State private var shown = true
 
-        ZStack {
-            if shown {
-                RoundedRectangle(cornerRadius: 16)
-                    .transition(.asymmetric(
-                        insertion: .move(edge: .leading).combined(with: .opacity),
-                        removal: .scale.combined(with: .opacity)
-                    ))
+            ZStack {
+                if shown {
+                    RoundedRectangle(cornerRadius: 16)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .leading).combined(with: .opacity),
+                            removal: .scale.combined(with: .opacity)
+                        ))
+                }
             }
-        }
-        Button("Show / hide") {
-            withAnimation(.smooth) { shown.toggle() }
-        }
-        """#
+            Button("Show / hide") {
+                withAnimation(.smooth) { shown.toggle() }
+            }
+            """#
     )
 
     var body: some View {
@@ -40,10 +40,11 @@ struct TransitionsDemo: View {
                         .fill(.indigo.gradient)
                         .frame(width: 200, height: 110)
                         .overlay { Text("Card").font(.headline).foregroundStyle(.white) }
-                        .transition(.asymmetric(
-                            insertion: .move(edge: .leading).combined(with: .opacity),
-                            removal: .scale.combined(with: .opacity)
-                        ))
+                        .transition(
+                            .asymmetric(
+                                insertion: .move(edge: .leading).combined(with: .opacity),
+                                removal: .scale.combined(with: .opacity)
+                            ))
                 }
             }
             .frame(height: 120)

@@ -15,21 +15,21 @@ struct PagingDemo: View {
         title: "Paging scroll",
         summary: "Snap-to-page horizontal scroll with containerRelativeFrame (iOS 17).",
         code: #"""
-        @State private var page: Int?
+            @State private var page: Int?
 
-        ScrollView(.horizontal) {
-            LazyHStack(spacing: 0) {
-                ForEach(0..<6, id: \.self) { index in
-                    RoundedRectangle(cornerRadius: 16)
-                        .containerRelativeFrame(.horizontal) { width, _ in width - 32 }
-                        .id(index)
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 0) {
+                    ForEach(0..<6, id: \.self) { index in
+                        RoundedRectangle(cornerRadius: 16)
+                            .containerRelativeFrame(.horizontal) { width, _ in width - 32 }
+                            .id(index)
+                    }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
-        }
-        .scrollTargetBehavior(.paging)
-        .scrollPosition(id: $page)
-        """#
+            .scrollTargetBehavior(.paging)
+            .scrollPosition(id: $page)
+            """#
     )
 
     var body: some View {

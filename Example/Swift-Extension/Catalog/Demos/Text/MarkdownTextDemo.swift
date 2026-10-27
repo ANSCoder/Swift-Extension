@@ -14,14 +14,14 @@ struct MarkdownTextDemo: View {
         title: "Markdown & AttributedString",
         summary: "Text(markdown) for inline styling; AttributedString for per-run colors and fonts (iOS 15+).",
         code: #"""
-        Text("**Bold**, *italic*, `code` and [a link](https://swift.org)")
+            Text("**Bold**, *italic*, `code` and [a link](https://swift.org)")
 
-        var styled = AttributedString("Styled ")
-        styled.foregroundColor = .blue
-        var emphasis = AttributedString("markdown")
-        emphasis.font = .title3.bold()
-        Text(styled + emphasis)
-        """#
+            var styled = AttributedString("Styled ")
+            styled.foregroundColor = .blue
+            var emphasis = AttributedString("markdown")
+            emphasis.font = .title3.bold()
+            Text(styled + emphasis)
+            """#
     )
 
     private var styled: AttributedString {

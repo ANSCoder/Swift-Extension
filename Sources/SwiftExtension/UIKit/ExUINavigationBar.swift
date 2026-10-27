@@ -28,7 +28,11 @@ import UIKit
 
 public extension UINavigationBar {
 
-    /// Sets the title font and color for standard and large titles.
+    /// Sets the font and color of the standard and large titles.
+    ///
+    /// - Parameters:
+    ///   - font: The title font.
+    ///   - color: The title color. The default is `.label`.
     func setTitleFont(_ font: UIFont, color: UIColor = .label) {
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: color]
         standardAppearance.titleTextAttributes = attributes
@@ -37,7 +41,9 @@ public extension UINavigationBar {
         scrollEdgeAppearance?.largeTitleTextAttributes = attributes
     }
 
-    /// Makes the navigation bar transparent with `tint` for the bar items and title.
+    /// Makes the navigation bar transparent, with a tint for its items and title.
+    ///
+    /// - Parameter tint: The color for bar items and the title. The default is white.
     func makeTransparent(withTint tint: UIColor = .white) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
@@ -47,7 +53,11 @@ public extension UINavigationBar {
         tintColor = tint
     }
 
-    /// Sets an opaque background color and matching text/tint color.
+    /// Sets an opaque background color, with matching colors for the title and bar items.
+    ///
+    /// - Parameters:
+    ///   - background: The background color of the bar.
+    ///   - text: The color of the title and bar items.
     func setColors(background: UIColor, text: UIColor) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

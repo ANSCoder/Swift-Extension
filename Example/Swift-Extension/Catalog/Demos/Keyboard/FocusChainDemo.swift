@@ -18,23 +18,23 @@ struct FocusChainDemo: View {
         title: "Focus chain",
         summary: "@FocusState plus submitLabel(.next) moves focus field to field, like a login form.",
         code: #"""
-        @FocusState private var focusedField: Int?
+            @FocusState private var focusedField: Int?
 
-        TextField("First", text: $first)
-            .focused($focusedField, equals: 0)
-            .submitLabel(.next)
-            .onSubmit { focusedField = 1 }
+            TextField("First", text: $first)
+                .focused($focusedField, equals: 0)
+                .submitLabel(.next)
+                .onSubmit { focusedField = 1 }
 
-        TextField("Last", text: $last)
-            .focused($focusedField, equals: 1)
-            .submitLabel(.next)
-            .onSubmit { focusedField = 2 }
+            TextField("Last", text: $last)
+                .focused($focusedField, equals: 1)
+                .submitLabel(.next)
+                .onSubmit { focusedField = 2 }
 
-        TextField("Email", text: $email)
-            .focused($focusedField, equals: 2)
-            .submitLabel(.done)
-            .onSubmit { focusedField = nil }
-        """#
+            TextField("Email", text: $email)
+                .focused($focusedField, equals: 2)
+                .submitLabel(.done)
+                .onSubmit { focusedField = nil }
+            """#
     )
 
     var body: some View {

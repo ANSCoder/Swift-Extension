@@ -15,13 +15,13 @@ struct ErrorAlertDemo: View {
         title: "Error alert from state",
         summary: "errorAlert(message:) shows an OK alert when an optional message becomes non-nil, then clears it.",
         code: #"""
-        @State private var message: String?
+            @State private var message: String?
 
-        Button("Trigger error") {
-            message = "Request timed out."
-        }
-        .errorAlert(message: $message)
-        """#
+            Button("Trigger error") {
+                message = "Request timed out."
+            }
+            .errorAlert(message: $message)
+            """#
     )
 
     var body: some View {

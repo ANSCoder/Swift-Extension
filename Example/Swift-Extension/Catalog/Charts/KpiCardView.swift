@@ -40,7 +40,8 @@ struct KpiCardView: View {
                 .strokeBorder(Palette.stroke)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(metric.title) \(metric.value), \(isPositive ? "up" : "down") \(String(format: "%.1f", abs(metric.delta))) percent")
+        .accessibilityLabel(
+            "\(metric.title) \(metric.value), \(isPositive ? "up" : "down") \(String(format: "%.1f", abs(metric.delta))) percent")
     }
 
     private var sparkline: some View {

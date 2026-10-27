@@ -14,17 +14,17 @@ struct ViewThatFitsDemo: View {
         title: "View that fits",
         summary: "ViewThatFits picks the first child that fits the offered space. Responsive layout with no GeometryReader.",
         code: #"""
-        ViewThatFits(in: .horizontal) {
-            HStack {
-                Image(systemName: "bolt.fill")
-                Text("Plenty of room for one line")
+            ViewThatFits(in: .horizontal) {
+                HStack {
+                    Image(systemName: "bolt.fill")
+                    Text("Plenty of room for one line")
+                }
+                VStack(alignment: .leading) {
+                    Image(systemName: "bolt.fill")
+                    Text("Stacked when tight")
+                }
             }
-            VStack(alignment: .leading) {
-                Image(systemName: "bolt.fill")
-                Text("Stacked when tight")
-            }
-        }
-        """#
+            """#
     )
 
     var body: some View {

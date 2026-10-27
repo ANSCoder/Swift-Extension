@@ -16,10 +16,10 @@ struct ValidationDemo: View {
         title: "Email & mobile validation",
         summary: "String.isEmail and isMobile use Swift Regex with whole-string matches.",
         code: #"""
-        "john.doe@example.com".isEmail   // true
-        "9876543210".isMobile            // true
-        "0876543210".isMobile            // false
-        """#
+            "john.doe@example.com".isEmail   // true
+            "9876543210".isMobile            // true
+            "0876543210".isMobile            // false
+            """#
     )
 
     var body: some View {
@@ -28,18 +28,22 @@ struct ValidationDemo: View {
                 .keyboardType(.emailAddress)
                 .textInputAutocapitalization(.never)
                 .textFieldStyle(.roundedBorder)
-            Label(email.isEmail ? "Valid email" : "Invalid email",
-                  systemImage: email.isEmail ? "checkmark.circle" : "xmark.circle")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
+            Label(
+                email.isEmail ? "Valid email" : "Invalid email",
+                systemImage: email.isEmail ? "checkmark.circle" : "xmark.circle"
+            )
+            .font(.footnote)
+            .foregroundStyle(.secondary)
 
             TextField("Mobile", text: $mobile)
                 .keyboardType(.numberPad)
                 .textFieldStyle(.roundedBorder)
-            Label(mobile.isMobile ? "Valid mobile" : "Invalid mobile",
-                  systemImage: mobile.isMobile ? "checkmark.circle" : "xmark.circle")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
+            Label(
+                mobile.isMobile ? "Valid mobile" : "Invalid mobile",
+                systemImage: mobile.isMobile ? "checkmark.circle" : "xmark.circle"
+            )
+            .font(.footnote)
+            .foregroundStyle(.secondary)
         }
         .onChange(of: play) { _, _ in
             withAnimation {

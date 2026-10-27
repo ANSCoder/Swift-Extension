@@ -13,22 +13,22 @@ struct ScrollToTopDemo: View {
         title: "Scroll to top & bottom",
         summary: "ScrollViewReader jumps to a row by id. Same idea as UIScrollView scrollToTop / scrollToBottom.",
         code: #"""
-        ScrollViewReader { proxy in
-            VStack {
-                HStack {
-                    Button("Top") { withAnimation { proxy.scrollTo(0, anchor: .top) } }
-                    Button("Bottom") { withAnimation { proxy.scrollTo(49, anchor: .bottom) } }
-                }
-                ScrollView {
-                    LazyVStack {
-                        ForEach(0..<50, id: \.self) { row in
-                            Text("Row \(row)").id(row)
+            ScrollViewReader { proxy in
+                VStack {
+                    HStack {
+                        Button("Top") { withAnimation { proxy.scrollTo(0, anchor: .top) } }
+                        Button("Bottom") { withAnimation { proxy.scrollTo(49, anchor: .bottom) } }
+                    }
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(0..<50, id: \.self) { row in
+                                Text("Row \(row)").id(row)
+                            }
                         }
                     }
                 }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

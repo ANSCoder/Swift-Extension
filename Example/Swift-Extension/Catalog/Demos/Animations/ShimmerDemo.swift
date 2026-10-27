@@ -17,22 +17,22 @@ struct ShimmerDemo: View {
         title: "Skeleton shimmer",
         summary: "redactedShimmer(_:) turns real content into a placeholder with a moving highlight while data loads.",
         code: #"""
-        @State private var loading = true
+            @State private var loading = true
 
-        VStack {
-            ForEach(users) { user in
-                HStack {
-                    Circle().fill(loading ? .gray.opacity(0.3) : .indigo)
-                        .frame(width: 46, height: 46)
-                    VStack(alignment: .leading) {
-                        Text(user.name).font(.headline)
-                        Text(user.role).font(.subheadline)
+            VStack {
+                ForEach(users) { user in
+                    HStack {
+                        Circle().fill(loading ? .gray.opacity(0.3) : .indigo)
+                            .frame(width: 46, height: 46)
+                        VStack(alignment: .leading) {
+                            Text(user.name).font(.headline)
+                            Text(user.role).font(.subheadline)
+                        }
                     }
                 }
             }
-        }
-        .redactedShimmer(loading)   // library extension
-        """#
+            .redactedShimmer(loading)   // library extension
+            """#
     )
 
     var body: some View {

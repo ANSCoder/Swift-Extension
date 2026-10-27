@@ -6,10 +6,12 @@
 import Foundation
 
 public extension URL {
-    /// The query as a dictionary. When a name repeats, the last value wins.
+    /// The query items as a dictionary.
+    ///
+    /// If a name appears more than once, the last value wins. Items without a value are omitted.
     ///
     /// ```swift
-    /// URL(string: "https://swift.org/docs?lang=en&sort=new")?.queryItems
+    /// URL(string: "https://swift.org?lang=en&sort=new")?.queryItems
     /// // ["lang": "en", "sort": "new"]
     /// ```
     var queryItems: [String: String] {
@@ -19,11 +21,14 @@ public extension URL {
         }
     }
 
-    /// A copy with `items` added to the query. Existing names are replaced.
+    /// Returns a copy of the URL with query items added or replaced.
     ///
     /// ```swift
     /// url.appendingQueryItems(["ref": "newsletter"])
     /// ```
+    ///
+    /// - Parameter items: Name and value pairs to add. An existing item with the same name is replaced.
+    /// - Returns: The new URL, or the original URL if its components can't be parsed.
     func appendingQueryItems(_ items: [String: String]) -> URL {
         guard var components = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return self }
         var merged = components.queryItems ?? []

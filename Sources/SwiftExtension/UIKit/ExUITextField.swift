@@ -28,31 +28,37 @@ import UIKit
 
 public extension UITextField {
 
-    /// Draws a 1pt rounded border in `color`.
+    /// Draws a 1-point rounded border around the field.
+    ///
+    /// - Parameter color: The border color. The default is a green.
     func setBorderAndCorner(color: UIColor = UIColor(hex: "61906B")) {
         layer.borderWidth = 1
         layer.borderColor = color.cgColor
         layer.cornerRadius = 5
     }
 
-    /// Adds `amount` points of empty space before the text, inside the field.
+    /// Adds empty space before the text, inside the field.
+    ///
+    /// - Parameter amount: The width of the space, in points.
     func setLeftPaddingPoints(_ amount: CGFloat) {
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: frame.height))
         leftViewMode = .always
     }
 
-    /// Adds `amount` points of empty space after the text, inside the field.
+    /// Adds empty space after the text, inside the field.
+    ///
+    /// - Parameter amount: The width of the space, in points.
     func setRightPaddingPoints(_ amount: CGFloat) {
         rightView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: frame.height))
         rightViewMode = .always
     }
 
-    /// `true` when the text is a valid email address.
+    /// A Boolean value that indicates whether the text is a valid email address.
     var isValidEmail: Bool {
         (text ?? "").isEmail
     }
 
-    /// `true` when the text is exactly a 10-digit phone number as detected by `NSDataDetector`.
+    /// A Boolean value that indicates whether the text is exactly a ten-digit phone number, as detected by `NSDataDetector`.
     var isPhoneNumber: Bool {
         let value = text ?? ""
         let fullRange = NSRange(value.startIndex..., in: value)

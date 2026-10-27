@@ -16,19 +16,19 @@ struct ScrollDismissesDemo: View {
         title: "Scroll dismisses keyboard",
         summary: "scrollDismissesKeyboard(.interactively) follows the finger down, like Messages.",
         code: #"""
-        @State private var reply = ""
+            @State private var reply = ""
 
-        ScrollView {
-            VStack(spacing: 12) {
-                ForEach(0..<15, id: \.self) { index in
-                    Text("Message \(index)")
+            ScrollView {
+                VStack(spacing: 12) {
+                    ForEach(0..<15, id: \.self) { index in
+                        Text("Message \(index)")
+                    }
+                    TextField("Reply", text: $reply)
+                        .textFieldStyle(.roundedBorder)
                 }
-                TextField("Reply", text: $reply)
-                    .textFieldStyle(.roundedBorder)
             }
-        }
-        .scrollDismissesKeyboard(.interactively)
-        """#
+            .scrollDismissesKeyboard(.interactively)
+            """#
     )
 
     var body: some View {

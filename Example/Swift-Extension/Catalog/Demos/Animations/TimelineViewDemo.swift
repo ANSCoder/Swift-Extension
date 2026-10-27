@@ -14,15 +14,15 @@ struct TimelineViewDemo: View {
         title: "Timeline-driven animation",
         summary: "TimelineView redraws every frame with the current date. Use for clocks, rotations and custom physics.",
         code: #"""
-        @State private var paused = false
+            @State private var paused = false
 
-        TimelineView(.animation(paused: paused)) { context in
-            let seconds = context.date.timeIntervalSinceReferenceDate
-            Image(systemName: "gear")
-                .font(.system(size: 64))
-                .rotationEffect(.degrees(seconds.truncatingRemainder(dividingBy: 4) * 90))
-        }
-        """#
+            TimelineView(.animation(paused: paused)) { context in
+                let seconds = context.date.timeIntervalSinceReferenceDate
+                Image(systemName: "gear")
+                    .font(.system(size: 64))
+                    .rotationEffect(.degrees(seconds.truncatingRemainder(dividingBy: 4) * 90))
+            }
+            """#
     )
 
     var body: some View {

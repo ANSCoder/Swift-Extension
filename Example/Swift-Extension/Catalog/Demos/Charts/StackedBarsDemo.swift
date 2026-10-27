@@ -16,23 +16,23 @@ struct StackedBarsDemo: View {
         title: "Stacked bars",
         summary: "Series stacked per month, switchable between absolute values and a 100% view.",
         code: #"""
-        import Charts
+            import Charts
 
-        @State private var normalized = false
+            @State private var normalized = false
 
-        Chart(data) { item in
-            BarMark(
-                x: .value("Month", item.label),
-                y: .value("Sessions", item.value),
-                stacking: normalized ? .normalized : .standard
-            )
-            .foregroundStyle(by: .value("Channel", item.series))
-            .cornerRadius(4)
-        }
-        .chartForegroundStyleScale(["Web": .indigo, "iOS": .teal, "Android": .orange])
-        .chartLegend(position: .top, alignment: .leading)
-        .animation(.smooth, value: normalized)
-        """#
+            Chart(data) { item in
+                BarMark(
+                    x: .value("Month", item.label),
+                    y: .value("Sessions", item.value),
+                    stacking: normalized ? .normalized : .standard
+                )
+                .foregroundStyle(by: .value("Channel", item.series))
+                .cornerRadius(4)
+            }
+            .chartForegroundStyleScale(["Web": .indigo, "iOS": .teal, "Android": .orange])
+            .chartLegend(position: .top, alignment: .leading)
+            .animation(.smooth, value: normalized)
+            """#
     )
 
     var body: some View {
@@ -55,7 +55,7 @@ struct StackedBarsDemo: View {
             .chartForegroundStyleScale([
                 "Web": Palette.series[0],
                 "iOS": Palette.series[1],
-                "Android": Palette.series[2]
+                "Android": Palette.series[2],
             ])
             .chartLegend(position: .top, alignment: .leading, spacing: 8)
             .chartYAxis {

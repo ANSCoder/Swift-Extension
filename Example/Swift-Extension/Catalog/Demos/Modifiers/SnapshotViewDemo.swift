@@ -16,17 +16,17 @@ struct SnapshotViewDemo: View {
         title: "View to image",
         summary: "snapshot(scale:) renders any SwiftUI view into a UIImage with ImageRenderer. Share it, save it, or print it.",
         code: #"""
-        @State private var image: UIImage?
+            @State private var image: UIImage?
 
-        let badge = VStack {
-            Image(systemName: "seal.fill")
-            Text("Snapshot")
-        }
+            let badge = VStack {
+                Image(systemName: "seal.fill")
+                Text("Snapshot")
+            }
 
-        Button("Capture") {
-            image = badge.snapshot(scale: 3)   // library extension
-        }
-        """#
+            Button("Capture") {
+                image = badge.snapshot(scale: 3)   // library extension
+            }
+            """#
     )
 
     private var badge: some View {

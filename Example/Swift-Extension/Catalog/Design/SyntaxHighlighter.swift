@@ -22,7 +22,7 @@ enum SyntaxHighlighter {
     private static let keywords = [
         "import", "struct", "class", "enum", "extension", "protocol", "func", "var", "let", "if", "else",
         "guard", "return", "in", "some", "private", "static", "case", "switch", "for", "while", "true",
-        "false", "nil", "self", "await", "try", "async", "init", "where", "throws", "any"
+        "false", "nil", "self", "await", "try", "async", "init", "where", "throws", "any",
     ].joined(separator: "|")
 
     /// Returns `code` as an attributed string. Later rules win, so comments and strings override the rest.

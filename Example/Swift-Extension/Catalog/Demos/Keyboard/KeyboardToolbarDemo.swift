@@ -16,19 +16,19 @@ struct KeyboardToolbarDemo: View {
         title: "Keyboard toolbar with Done",
         summary: "Decimal pads have no return key. A keyboard toolbar item gives the user a way out.",
         code: #"""
-        @State private var amount = ""
-        @FocusState private var focused: Bool
+            @State private var amount = ""
+            @FocusState private var focused: Bool
 
-        TextField("Amount", text: $amount)
-            .keyboardType(.decimalPad)
-            .focused($focused)
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button("Done") { focused = false }
+            TextField("Amount", text: $amount)
+                .keyboardType(.decimalPad)
+                .focused($focused)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") { focused = false }
+                    }
                 }
-            }
-        """#
+            """#
     )
 
     var body: some View {

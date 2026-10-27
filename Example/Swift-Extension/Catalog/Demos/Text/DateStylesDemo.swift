@@ -14,13 +14,13 @@ struct DateStylesDemo: View {
         title: "Date text styles",
         summary: "Text(date, style:) formats and keeps relative times fresh without a timer you manage.",
         code: #"""
-        let date = Date.now.addingTimeInterval(-5_400)
+            let date = Date.now.addingTimeInterval(-5_400)
 
-        Text(date, style: .relative)     // "1 hr, 30 min ago"
-        Text(date, style: .date)
-        Text(date, format: .dateTime.hour().minute())
-        Text(Date.now, style: .timer)    // ticking counter
-        """#
+            Text(date, style: .relative)     // "1 hr, 30 min ago"
+            Text(date, style: .date)
+            Text(date, format: .dateTime.hour().minute())
+            Text(Date.now, style: .timer)    // ticking counter
+            """#
     )
 
     var body: some View {

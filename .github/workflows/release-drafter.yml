@@ -14,7 +14,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       # No checkout: pull_request_target must never run untrusted code with a write token.
       - uses: release-drafter/release-drafter@v6

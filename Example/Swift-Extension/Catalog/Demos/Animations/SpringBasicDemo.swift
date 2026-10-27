@@ -15,17 +15,17 @@ struct SpringBasicDemo: View {
         title: "Spring basics",
         summary: "withAnimation + spring(response:dampingFraction:). Lower damping = more bounce. Honors Reduce Motion.",
         code: #"""
-        @State private var big = false
-        @Environment(\.accessibilityReduceMotion) private var reduceMotion
+            @State private var big = false
+            @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-        Circle()
-            .scaleEffect(big ? 1.6 : 1)
-            .onTapGesture {
-                withAnimation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.5)) {
-                    big.toggle()
+            Circle()
+                .scaleEffect(big ? 1.6 : 1)
+                .onTapGesture {
+                    withAnimation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.5)) {
+                        big.toggle()
+                    }
                 }
-            }
-        """#
+            """#
     )
 
     var body: some View {

@@ -28,7 +28,13 @@ import UIKit
 
 public extension UIScrollView {
 
-    /// Scrolls so that `view`'s top edge sits at the top of the scroll view.
+    /// Scrolls so that the top edge of a view sits at the top of the scroll view.
+    ///
+    /// The view must be inside the scroll view's hierarchy. If it isn't, nothing happens.
+    ///
+    /// - Parameters:
+    ///   - view: The view to scroll to.
+    ///   - animated: Whether to animate the scroll.
     func scrollToView(view: UIView, animated: Bool) {
         guard view.superview != nil else { return }
         let top = view.convert(view.bounds, to: self).minY
@@ -36,11 +42,17 @@ public extension UIScrollView {
     }
 
     /// Scrolls to the top edge of the content, respecting insets and the safe area.
+    ///
+    /// - Parameter animated: Whether to animate the scroll.
     func scrollToTop(animated: Bool) {
         setContentOffset(CGPoint(x: 0, y: -adjustedContentInset.top), animated: animated)
     }
 
-    /// Scrolls to the bottom edge of the content. Does nothing when the content fits on screen.
+    /// Scrolls to the bottom edge of the content.
+    ///
+    /// Does nothing when the content fits on screen.
+    ///
+    /// - Parameter animated: Whether to animate the scroll. The default is `true`.
     func scrollToBottom(animated: Bool = true) {
         let offset = CGPoint(x: 0, y: contentSize.height - bounds.height + adjustedContentInset.bottom)
         guard offset.y > 0 else { return }

@@ -28,7 +28,14 @@ import UIKit
 
 public extension NSMutableAttributedString {
 
-    /// Appends `text` in a medium weight, scaled to the user's current text size. Falls back to the system font when Avenir Next is not installed.
+    /// Appends text in a medium weight, scaled to the user's current text size.
+    ///
+    /// The font is Avenir Next Medium when available, and the system medium weight otherwise.
+    ///
+    /// - Parameters:
+    ///   - text: The text to append.
+    ///   - size: The base point size, before scaling for Dynamic Type.
+    /// - Returns: The same string, for chaining.
     @discardableResult
     func bold(_ text: String, size: CGFloat = 12) -> NSMutableAttributedString {
         let base = UIFont(name: "AvenirNext-Medium", size: size) ?? .systemFont(ofSize: size, weight: .medium)
@@ -36,7 +43,10 @@ public extension NSMutableAttributedString {
         return self
     }
 
-    /// Appends `text` with the default attributes and returns `self` for chaining.
+    /// Appends text with the default attributes.
+    ///
+    /// - Parameter text: The text to append.
+    /// - Returns: The same string, for chaining.
     @discardableResult
     func normal(_ text: String) -> NSMutableAttributedString {
         append(NSAttributedString(string: text))

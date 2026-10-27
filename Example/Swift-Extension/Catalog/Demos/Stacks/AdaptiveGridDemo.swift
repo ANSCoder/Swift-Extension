@@ -14,17 +14,17 @@ struct AdaptiveGridDemo: View {
         title: "Adaptive grid",
         summary: "LazyVGrid with .adaptive columns fits as many cells as the width allows. Scales to iPad.",
         code: #"""
-        @State private var minimum: CGFloat = 70
+            @State private var minimum: CGFloat = 70
 
-        ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: minimum), spacing: 8)], spacing: 8) {
-                ForEach(0..<30, id: \.self) { index in
-                    Circle().fill(.tint.opacity(0.4))
-                        .aspectRatio(1, contentMode: .fit)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: minimum), spacing: 8)], spacing: 8) {
+                    ForEach(0..<30, id: \.self) { index in
+                        Circle().fill(.tint.opacity(0.4))
+                            .aspectRatio(1, contentMode: .fit)
+                    }
                 }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

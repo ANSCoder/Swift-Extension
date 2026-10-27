@@ -26,8 +26,12 @@
 import Foundation
 
 public extension DateFormatter {
-    /// A formatter pinned to `en_US_POSIX` so digits and month names never depend on the user's locale.
-    /// Internal: only used for parsing and one-off formatting, never shared between threads.
+    /// Creates a date formatter that uses the `en_US_POSIX` locale.
+    ///
+    /// Use this for fixed-format strings that must not change with the user's locale.
+    ///
+    /// - Parameter format: A date format string, such as `"dd-MM-yyyy"`.
+    /// - Returns: A new formatter. Create one per use rather than sharing it.
     static func posix(_ format: String) -> DateFormatter {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
@@ -38,42 +42,59 @@ public extension DateFormatter {
 
 public extension Date {
 
-    /// The date as `dd-MM-yyyy`, e.g. `27-10-2026`, in the current time zone.
+    /// Returns the date formatted as `dd-MM-yyyy` in the current time zone.
     ///
-    /// Uses a value-type `FormatStyle`, so there is no shared formatter and no locking.
+    /// ```swift
+    /// Date.now.toString()   // "27-10-2026"
+    /// ```
+    ///
+    /// - Returns: The formatted date.
     func toString() -> String {
         formatted(Date.dayStyle)
     }
 
-    /// The time as `HH:mm`, e.g. `09:45`, in the current time zone.
+    /// Returns the time formatted as 24-hour `HH:mm` in the current time zone.
+    ///
+    /// ```swift
+    /// Date.now.toTimeString()   // "09:45"
+    /// ```
+    ///
+    /// - Returns: The formatted time.
     func toTimeString() -> String {
         formatted(Date.timeStyle)
     }
 
-    /// `true` when the date falls on the same calendar day as `other`.
+    /// Returns a Boolean value that indicates whether the date falls on the same calendar day as another date.
     ///
-    /// ```swift
-    /// morning.isSameDay(as: evening)   // true
-    /// ```
+    /// - Parameters:
+    ///   - other: The date to compare with.
+    ///   - calendar: The calendar that defines day boundaries. The default is the current calendar.
+    /// - Returns: `true` if both dates fall on the same calendar day.
     func isSameDay(as other: Date, calendar: Calendar = .current) -> Bool {
         calendar.isDate(self, inSameDayAs: other)
     }
 
-    /// `true` when the date falls on today.
+    /// A Boolean value that indicates whether the date falls on today's calendar day.
     var isToday: Bool {
         Calendar.current.isDateInToday(self)
     }
 
-    /// The first moment of the calendar day containing the date.
+    /// The first moment of the calendar day that contains the date.
     var startOfDay: Date {
         Calendar.current.startOfDay(for: self)
     }
 
-    /// The date moved by `value` units of `component`. Returns `nil` when the result cannot be calculated.
+    /// Returns the date moved by a number of calendar units.
     ///
     /// ```swift
-    /// Date.now.adding(.day, value: 7)
+    /// let nextWeek = Date.now.adding(.day, value: 7)
     /// ```
+    ///
+    /// - Parameters:
+    ///   - component: The calendar unit to add, such as `.day` or `.month`.
+    ///   - value: The number of units to add. A negative value moves the date backward.
+    ///   - calendar: The calendar used for the calculation. The default is the current calendar.
+    /// - Returns: The new date, or `nil` if the result is outside the range the calendar supports.
     func adding(_ component: Calendar.Component, value: Int, calendar: Calendar = .current) -> Date? {
         calendar.date(byAdding: component, value: value, to: self)
     }

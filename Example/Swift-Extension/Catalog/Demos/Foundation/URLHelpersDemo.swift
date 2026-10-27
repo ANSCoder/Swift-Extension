@@ -15,14 +15,14 @@ struct URLHelpersDemo: View {
         title: "URL & Bundle helpers",
         summary: "queryItems reads a query as a dictionary, appendingQueryItems merges new ones, Bundle gives version and build.",
         code: #"""
-        let url = URL(string: "https://swift.org/docs?lang=en&sort=new")!
+            let url = URL(string: "https://swift.org/docs?lang=en&sort=new")!
 
-        url.queryItems                                  // ["lang": "en", "sort": "new"]
-        url.appendingQueryItems(["ref": "newsletter"])  // ...&ref=newsletter
+            url.queryItems                                  // ["lang": "en", "sort": "new"]
+            url.appendingQueryItems(["ref": "newsletter"])  // ...&ref=newsletter
 
-        Bundle.main.appVersion    // "1.0"
-        Bundle.main.buildNumber   // "1"
-        """#
+            Bundle.main.appVersion    // "1.0"
+            Bundle.main.buildNumber   // "1"
+            """#
     )
 
     private var items: [(key: String, value: String)] {

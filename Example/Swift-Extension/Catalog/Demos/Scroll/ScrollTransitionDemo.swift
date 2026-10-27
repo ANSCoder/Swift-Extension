@@ -13,20 +13,20 @@ struct ScrollTransitionDemo: View {
         title: "Scroll transition",
         summary: "scrollTransition ties effects to each row's position in the viewport (iOS 17). Cheap parallax-style polish.",
         code: #"""
-        ScrollView {
-            LazyVStack(spacing: 12) {
-                ForEach(0..<30, id: \.self) { row in
-                    RoundedRectangle(cornerRadius: 16)
-                        .frame(height: 80)
-                        .scrollTransition(axis: .vertical) { content, phase in
-                            content
-                                .opacity(phase.isIdentity ? 1 : 0.2)
-                                .scaleEffect(phase.isIdentity ? 1 : 0.8)
-                        }
+            ScrollView {
+                LazyVStack(spacing: 12) {
+                    ForEach(0..<30, id: \.self) { row in
+                        RoundedRectangle(cornerRadius: 16)
+                            .frame(height: 80)
+                            .scrollTransition(axis: .vertical) { content, phase in
+                                content
+                                    .opacity(phase.isIdentity ? 1 : 0.2)
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.8)
+                            }
+                    }
                 }
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {

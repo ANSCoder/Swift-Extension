@@ -15,13 +15,13 @@ struct DateHelpersDemo: View {
         title: "Date helpers",
         summary: "isToday, isSameDay(as:), adding(_:value:) and startOfDay, plus toString() / toTimeString().",
         code: #"""
-        let date = Date.now
+            let date = Date.now
 
-        date.isToday                          // true
-        date.isSameDay(as: .now)              // true
-        date.adding(.day, value: 7)?.toString()
-        date.startOfDay.toTimeString()        // "00:00"
-        """#
+            date.isToday                          // true
+            date.isSameDay(as: .now)              // true
+            date.adding(.day, value: 7)?.toString()
+            date.startOfDay.toTimeString()        // "00:00"
+            """#
     )
 
     var body: some View {

@@ -17,14 +17,14 @@ struct SizeAndAppearDemo: View {
         title: "Size & first appear",
         summary: "onSizeChange reports rendered size. onFirstAppear runs once, even when the view re-appears.",
         code: #"""
-        @State private var measured = CGSize.zero
-        @State private var appearances = 0
+            @State private var measured = CGSize.zero
+            @State private var appearances = 0
 
-        RoundedRectangle(cornerRadius: 12)
-            .frame(width: width, height: 60)
-            .onSizeChange { measured = $0 }
-            .onFirstAppear { appearances += 1 }
-        """#
+            RoundedRectangle(cornerRadius: 12)
+                .frame(width: width, height: 60)
+                .onSizeChange { measured = $0 }
+                .onFirstAppear { appearances += 1 }
+            """#
     )
 
     var body: some View {

@@ -15,21 +15,21 @@ struct LoadingOverlayDemo: View {
         title: "Loading overlay",
         summary: "loadingOverlay(_:) dims content, shows a spinner and blocks taps while work runs.",
         code: #"""
-        @State private var loading = false
+            @State private var loading = false
 
-        VStack {
-            Text("Content underneath")
-        }
-        .loadingOverlay(loading)
-
-        Button("Load") {
-            loading = true
-            Task {
-                try? await Task.sleep(for: .seconds(2))
-                loading = false
+            VStack {
+                Text("Content underneath")
             }
-        }
-        """#
+            .loadingOverlay(loading)
+
+            Button("Load") {
+                loading = true
+                Task {
+                    try? await Task.sleep(for: .seconds(2))
+                    loading = false
+                }
+            }
+            """#
     )
 
     var body: some View {

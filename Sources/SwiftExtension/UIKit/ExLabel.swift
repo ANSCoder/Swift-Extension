@@ -28,17 +28,24 @@ import UIKit
 
 public extension UILabel {
 
-    /// Left-aligns the text.
+    /// Aligns the text to the leading edge.
     func setLeft() {
         textAlignment = .left
     }
 
-    /// Right-aligns the text.
+    /// Aligns the text to the trailing edge.
     func setRight() {
         textAlignment = .right
     }
 
-    /// Shows `with` in the label's current font, followed by `effect` in the system font.
+    /// Sets the text to two parts: a first part and a second part in the system font.
+    ///
+    /// The first part keeps the label's current font. Both parts use the label's text color.
+    ///
+    /// - Parameters:
+    ///   - with: The first part of the text.
+    ///   - effect: The text that follows, in the system font.
+    /// - Important: Font sizes are fixed when this method runs. Call it again after a Dynamic Type change.
     func attribute(_ with: String, effect: String) {
         let baseFont: UIFont = font ?? .systemFont(ofSize: UIFont.labelFontSize)
         let result = NSMutableAttributedString(string: with, attributes: [.font: baseFont, .foregroundColor: UIColor.label])

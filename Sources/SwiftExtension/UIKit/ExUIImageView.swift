@@ -28,13 +28,15 @@ import UIKit
 
 public extension UIImageView {
 
-    /// Makes the image view circular. Call again after the layout changes, e.g. in `layoutSubviews`.
+    /// Makes the image view circular.
+    ///
+    /// Call this again after the layout changes, for example in `layoutSubviews()`.
     func setRounded() {
         layer.cornerRadius = bounds.width / 2
         layer.masksToBounds = true
     }
 
-    /// Rounds the corners relative to the view height.
+    /// Rounds the corners by one twentieth of the view's height.
     func setCornerRadius() {
         layer.cornerRadius = bounds.height / 20
         layer.masksToBounds = true

@@ -27,7 +27,13 @@
 import UIKit
 
 public extension UIColor {
-    /// Creates a color from `"#RRGGBB"`, `"RRGGBB"` or `"RRGGBBAA"`. Invalid input falls back to gray.
+    /// Creates a color from a hexadecimal string.
+    ///
+    /// ```swift
+    /// UIColor(hex: "#61906B")
+    /// ```
+    ///
+    /// - Parameter hex: A string in the form `RRGGBB`, `#RRGGBB`, or `RRGGBBAA`. Invalid input produces gray.
     convenience init(hex: String) {
         let value = hex.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "#", with: "")
         guard value.count == 6 || value.count == 8, value.allSatisfy(\.isHexDigit),
@@ -45,7 +51,9 @@ public extension UIColor {
         )
     }
 
-    /// The color as `#RRGGBB`. Alpha is dropped and each component is rounded to 8 bits.
+    /// The color as a `#RRGGBB` string.
+    ///
+    /// Alpha is dropped, and each component is rounded to 8 bits.
     var hexString: String {
         var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)

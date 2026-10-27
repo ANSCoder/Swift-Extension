@@ -9,14 +9,18 @@ import SwiftUI
 /// Small, composable `View` helpers. Each one is a single modifier you can copy on its own.
 public extension View {
 
-    /// Applies `transform` only when `condition` is `true`.
+    /// Applies a transform to the view when a condition is true.
     ///
     /// ```swift
-    /// Text("Pro")
-    ///     .if(isHighlighted) { $0.foregroundStyle(.orange).bold() }
+    /// Text("Pro").if(isHighlighted) { $0.foregroundStyle(.orange) }
     /// ```
-    /// - Note: Changing `condition` swaps the view type, so SwiftUI treats it as a new view and
-    ///   resets its state. Prefer a ternary on a single modifier for values that change often.
+    ///
+    /// Changing `condition` changes the view's type, so SwiftUI treats the result as a new view and resets its state. For values that change often, use a ternary on a single modifier instead.
+    ///
+    /// - Parameters:
+    ///   - condition: Whether to apply the transform.
+    ///   - transform: A closure that returns the modified view.
+    /// - Returns: The transformed view, or the original view when `condition` is `false`.
     @ViewBuilder
     func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
         if condition {
@@ -26,12 +30,16 @@ public extension View {
         }
     }
 
-    /// Applies `transform` only when `value` is non-nil, passing the unwrapped value.
+    /// Applies a transform to the view when an optional value is present.
     ///
     /// ```swift
-    /// Text("Profile")
-    ///     .ifLet(user.nickname) { view, name in view.accessibilityLabel(name) }
+    /// Text("Profile").ifLet(user.nickname) { view, name in view.accessibilityLabel(name) }
     /// ```
+    ///
+    /// - Parameters:
+    ///   - value: The optional value. The transform runs only when it isn't `nil`.
+    ///   - transform: A closure that receives the view and the unwrapped value.
+    /// - Returns: The transformed view, or the original view when `value` is `nil`.
     @ViewBuilder
     func ifLet<Value, Content: View>(_ value: Value?, transform: (Self, Value) -> Content) -> some View {
         if let value {
@@ -41,12 +49,12 @@ public extension View {
         }
     }
 
-    /// Hides the view but keeps its layout space when `condition` is `true`.
-    /// Hidden views are also removed from VoiceOver.
+    /// Hides the view while keeping its layout space, when a condition is true.
     ///
-    /// ```swift
-    /// Text("Invalid email").hidden(if: email.isEmpty)
-    /// ```
+    /// Hidden views are also removed from the accessibility tree.
+    ///
+    /// - Parameter condition: Whether to hide the view.
+    /// - Returns: The view, hidden when `condition` is `true`.
     @ViewBuilder
     func hidden(if condition: Bool) -> some View {
         if condition {
@@ -56,24 +64,28 @@ public extension View {
         }
     }
 
-    /// Runs `action` the first time the view appears and ignores later appearances.
+    /// Runs an action the first time the view appears, and ignores later appearances.
     ///
     /// ```swift
-    /// DashboardView()
-    ///     .onFirstAppear { analytics.track(.dashboardOpened) }
+    /// DashboardView().onFirstAppear { analytics.track(.dashboardOpened) }
     /// ```
+    ///
+    /// - Parameter action: The closure to run once.
+    /// - Returns: The view with the one-time action attached.
     func onFirstAppear(perform action: @escaping () -> Void) -> some View {
         modifier(FirstAppearModifier(action: action))
     }
 
-    /// Calls `action` with the rendered size of the view whenever it changes.
+    /// Calls an action with the rendered size of the view whenever that size changes.
     ///
     /// ```swift
     /// @State private var size = CGSize.zero
     ///
-    /// Text("Measure me")
-    ///     .onSizeChange { size = $0 }
+    /// Text("Measure me").onSizeChange { size = $0 }
     /// ```
+    ///
+    /// - Parameter action: The closure to call with the new size.
+    /// - Returns: The view with size reporting attached.
     func onSizeChange(perform action: @escaping (CGSize) -> Void) -> some View {
         background {
             GeometryReader { proxy in
@@ -83,12 +95,14 @@ public extension View {
         .onPreferenceChange(SizePreferenceKey.self, perform: action)
     }
 
-    /// Dims the view, shows a spinner and blocks interaction while `isLoading` is `true`.
+    /// Dims the view, shows a spinner, and blocks interaction while loading.
     ///
     /// ```swift
-    /// Form { ... }
-    ///     .loadingOverlay(viewModel.isSaving)
+    /// Form { ... }.loadingOverlay(viewModel.isSaving)
     /// ```
+    ///
+    /// - Parameter isLoading: Whether the loading overlay is visible.
+    /// - Returns: The view with the overlay attached.
     func loadingOverlay(_ isLoading: Bool) -> some View {
         overlay {
             if isLoading {
@@ -101,17 +115,19 @@ public extension View {
         .disabled(isLoading)
     }
 
-    /// Shows an OK alert whenever `message` becomes non-nil, then clears it.
+    /// Shows an OK alert whenever the message becomes non-`nil`, then clears the message.
     ///
     /// ```swift
     /// @State private var errorMessage: String?
     ///
-    /// Button("Save") { errorMessage = "Could not reach the server." }
+    /// Button("Save") { errorMessage = "The server didn't respond." }
     ///     .errorAlert(message: $errorMessage)
     /// ```
+    ///
     /// - Parameters:
-    ///   - title: Alert title. Defaults to "Something went wrong".
-    ///   - message: The text to show. Setting it to `nil` dismisses the alert.
+    ///   - title: The alert title.
+    ///   - message: The text to show. Dismissing the alert sets it to `nil`.
+    /// - Returns: The view with the alert attached.
     func errorAlert(_ title: String = "Something went wrong", message: Binding<String?>) -> some View {
         alert(
             title,
@@ -129,10 +145,11 @@ public extension View {
     /// Dismisses the keyboard when the user taps an empty area of the view.
     ///
     /// ```swift
-    /// VStack { TextField("Name", text: $name) }
-    ///     .dismissKeyboardOnTap()
+    /// VStack { TextField("Name", text: $name) }.dismissKeyboardOnTap()
     /// ```
-    /// - Important: Uses `UIApplication`, so it is unavailable in app extensions.
+    ///
+    /// - Important: This uses `UIApplication`, so it isn't available in app extensions.
+    /// - Returns: The view with the tap gesture attached.
     @available(iOSApplicationExtension, unavailable, message: "UIApplication.shared is not available in app extensions.")
     func dismissKeyboardOnTap() -> some View {
         contentShape(Rectangle()).onTapGesture {
@@ -140,11 +157,14 @@ public extension View {
         }
     }
 
-    /// A padded card with a rounded system background and a soft shadow.
+    /// Adds a padded card with a rounded system background and a soft shadow.
     ///
     /// ```swift
     /// Text("Hello").cardStyle(cornerRadius: 16)
     /// ```
+    ///
+    /// - Parameter cornerRadius: The corner radius of the card background.
+    /// - Returns: The view styled as a card.
     func cardStyle(cornerRadius: CGFloat = 12) -> some View {
         padding()
             .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: cornerRadius))
@@ -156,6 +176,12 @@ public extension View {
     /// ```swift
     /// Text("Selected").padding().roundedBorder(.indigo, width: 2)
     /// ```
+    ///
+    /// - Parameters:
+    ///   - color: The color of the border.
+    ///   - width: The line width of the border, in points.
+    ///   - cornerRadius: The corner radius of the border.
+    /// - Returns: The view with the border drawn over it.
     func roundedBorder(_ color: Color = .secondary, width: CGFloat = 1, cornerRadius: CGFloat = 12) -> some View {
         overlay {
             RoundedRectangle(cornerRadius: cornerRadius)

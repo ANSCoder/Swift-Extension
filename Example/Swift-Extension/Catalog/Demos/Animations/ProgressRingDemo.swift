@@ -15,23 +15,23 @@ struct ProgressRingDemo: View {
         title: "Progress ring",
         summary: "A trimmed circle with an angular gradient and a numeric transition in the middle. Springs to each new value.",
         code: #"""
-        @State private var progress = 0.72
+            @State private var progress = 0.72
 
-        Circle()
-            .trim(from: 0, to: progress)
-            .stroke(
-                AngularGradient(colors: [.indigo, .pink], center: .center),
-                style: StrokeStyle(lineWidth: 18, lineCap: .round)
-            )
-            .rotationEffect(.degrees(-90))
+            Circle()
+                .trim(from: 0, to: progress)
+                .stroke(
+                    AngularGradient(colors: [.indigo, .pink], center: .center),
+                    style: StrokeStyle(lineWidth: 18, lineCap: .round)
+                )
+                .rotationEffect(.degrees(-90))
 
-        Text(progress, format: .percent.precision(.fractionLength(0)))
-            .contentTransition(.numericText(value: progress))
+            Text(progress, format: .percent.precision(.fractionLength(0)))
+                .contentTransition(.numericText(value: progress))
 
-        Button("Update") {
-            withAnimation(.spring(duration: 1, bounce: 0.25)) { progress = .random(in: 0.2...1) }
-        }
-        """#
+            Button("Update") {
+                withAnimation(.spring(duration: 1, bounce: 0.25)) { progress = .random(in: 0.2...1) }
+            }
+            """#
     )
 
     var body: some View {
@@ -41,7 +41,8 @@ struct ProgressRingDemo: View {
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(
-                    AngularGradient(colors: [Palette.series[0], Palette.series[3]], center: .center, startAngle: .degrees(0), endAngle: .degrees(360)),
+                    AngularGradient(
+                        colors: [Palette.series[0], Palette.series[3]], center: .center, startAngle: .degrees(0), endAngle: .degrees(360)),
                     style: StrokeStyle(lineWidth: 18, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))

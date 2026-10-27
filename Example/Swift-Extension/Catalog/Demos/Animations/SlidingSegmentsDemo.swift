@@ -17,33 +17,35 @@ struct SlidingSegmentsDemo: View {
         title: "Sliding segmented control",
         summary: "One highlight shared across segments with matchedGeometryEffect, plus a numeric transition for the value.",
         code: #"""
-        @State private var selection = 0
-        @Namespace private var namespace
+            @State private var selection = 0
+            @Namespace private var namespace
 
-        HStack(spacing: 0) {
-            ForEach(items.indices, id: \.self) { index in
-                Button { withAnimation(.snappy) { selection = index } } label: {
-                    Text(items[index])
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .background {
-                            if selection == index {
-                                Capsule().fill(.indigo)
-                                    .matchedGeometryEffect(id: "pill", in: namespace)
+            HStack(spacing: 0) {
+                ForEach(items.indices, id: \.self) { index in
+                    Button { withAnimation(.snappy) { selection = index } } label: {
+                        Text(items[index])
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 10)
+                            .background {
+                                if selection == index {
+                                    Capsule().fill(.indigo)
+                                        .matchedGeometryEffect(id: "pill", in: namespace)
+                                }
                             }
-                        }
+                    }
+                    .accessibilityAddTraits(selection == index ? .isSelected : [])
                 }
-                .accessibilityAddTraits(selection == index ? .isSelected : [])
             }
-        }
-        """#
+            """#
     )
 
     var body: some View {
         VStack(spacing: 28) {
             HStack(spacing: 0) {
                 ForEach(items.indices, id: \.self) { index in
-                    Button { select(index) } label: {
+                    Button {
+                        select(index)
+                    } label: {
                         Text(items[index])
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(selection == index ? Color.white : Color.primary)

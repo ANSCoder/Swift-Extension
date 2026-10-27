@@ -26,7 +26,18 @@
 import Foundation
 
 public extension Array {
-    /// The element at `index`, or `nil` when `index` is out of bounds.
+    /// Returns the element at the specified index, or `nil` if the index is out of bounds.
+    ///
+    /// Unlike subscript access, this method doesn't trap when the index is out of range.
+    ///
+    /// ```swift
+    /// let letters = ["a", "b"]
+    /// letters.atIndex(1)   // "b"
+    /// letters.atIndex(2)   // nil
+    /// ```
+    ///
+    /// - Parameter index: The position of the element to return.
+    /// - Returns: The element at `index`, or `nil` if `index` is out of bounds.
     func atIndex(_ index: Int) -> Element? {
         indices.contains(index) ? self[index] : nil
     }

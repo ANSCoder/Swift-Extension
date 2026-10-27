@@ -14,17 +14,17 @@ struct StackAlignmentDemo: View {
         title: "Stack alignment & overlays",
         summary: "VStack/HStack/ZStack alignment, spacing and overlays. The base of every layout.",
         code: #"""
-        @State private var trailing = false
+            @State private var trailing = false
 
-        VStack(alignment: trailing ? .trailing : .leading, spacing: 8) {
-            Text("Title").font(.headline)
-            Text("Subtitle").font(.subheadline)
-            HStack { Text("Left"); Spacer(); Text("Right") }
-        }
-        .overlay(alignment: .topTrailing) {
-            Badge()
-        }
-        """#
+            VStack(alignment: trailing ? .trailing : .leading, spacing: 8) {
+                Text("Title").font(.headline)
+                Text("Subtitle").font(.subheadline)
+                HStack { Text("Left"); Spacer(); Text("Right") }
+            }
+            .overlay(alignment: .topTrailing) {
+                Badge()
+            }
+            """#
     )
 
     var body: some View {

@@ -16,28 +16,28 @@ struct LiquidWaveDemo: View {
         title: "Liquid wave gauge",
         summary: "A custom Shape with animatable phase. Two offset waves inside a circle make a water level gauge.",
         code: #"""
-        struct WaveShape: Shape {
-            var phase: Double
-            var amplitude: CGFloat = 8
-            var animatableData: Double { get { phase } set { phase = newValue } }
+            struct WaveShape: Shape {
+                var phase: Double
+                var amplitude: CGFloat = 8
+                var animatableData: Double { get { phase } set { phase = newValue } }
 
-            func path(in rect: CGRect) -> Path {
-                var path = Path()
-                path.move(to: CGPoint(x: rect.minX, y: rect.maxY))
-                for x in stride(from: 0, through: rect.width, by: 3) {
-                    let wave = sin(Double(x / rect.width) * 3 * .pi + phase)
-                    path.addLine(to: CGPoint(x: x, y: amplitude + CGFloat(wave) * amplitude))
+                func path(in rect: CGRect) -> Path {
+                    var path = Path()
+                    path.move(to: CGPoint(x: rect.minX, y: rect.maxY))
+                    for x in stride(from: 0, through: rect.width, by: 3) {
+                        let wave = sin(Double(x / rect.width) * 3 * .pi + phase)
+                        path.addLine(to: CGPoint(x: x, y: amplitude + CGFloat(wave) * amplitude))
+                    }
+                    path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+                    return path
                 }
-                path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-                return path
             }
-        }
 
-        TimelineView(.animation) { timeline in
-            let t = timeline.date.timeIntervalSinceReferenceDate
-            WaveShape(phase: t * 2.2).fill(.blue.opacity(0.55))
-        }
-        """#
+            TimelineView(.animation) { timeline in
+                let t = timeline.date.timeIntervalSinceReferenceDate
+                WaveShape(phase: t * 2.2).fill(.blue.opacity(0.55))
+            }
+            """#
     )
 
     var body: some View {
