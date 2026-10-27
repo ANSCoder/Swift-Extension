@@ -53,7 +53,7 @@ https://github.com/ANSCoder/Swift-Extension
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ANSCoder/Swift-Extension", from: "1.0.0")
+    .package(url: "https://github.com/ANSCoder/Swift-Extension", from: "2.0.0")
 ],
 targets: [
     .target(name: "YourApp", dependencies: ["SwiftExtension"])
