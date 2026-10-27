@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+reviews:
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: true
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+  path_filters:
+    - "!docs/media/**"
+    - "!**/*.pbxproj"
+    - "!**/Assets.xcassets/**"
+  path_instructions:
+    - path: "Sources/**/*.swift"
+      instructions: |
+        Public library code. Check: Swift 6 data-race safety (no unchecked Sendable or unsafe escape hatches without a written invariant),
+        structured concurrency over unstructured Task and DispatchQueue, doc comment with example on every public declaration,
+        no force unwraps, UIKit/SwiftUI code inside `#if canImport(UIKit)`, Foundation code builds on macOS,
+        and no breaking public API change without a CHANGELOG entry.
+    - path: "Tests/**/*.swift"
+      instructions: |
+        Tests should assert behavior, cover edge cases (empty, out of range, non-ASCII), avoid time and locale dependence,
+        and mark UIKit or SwiftUI tests @MainActor.
+    - path: "Example/**/*.swift"
+      instructions: |
+        Demo app. Check accessibility (Dynamic Type, VoiceOver labels, Reduce Motion, no color-only status),
+        cancellation-aware async work (`.task(id:)` over unstructured Task), and that every Example case has info, playHint and demo.
+    - path: ".github/**"
+      instructions: |
+        Workflows must use least-privilege `permissions`, never run untrusted PR code under pull_request_target,
+        and keep action versions current.
+chat:
+  auto_reply: true

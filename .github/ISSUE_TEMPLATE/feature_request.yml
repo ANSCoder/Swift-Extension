@@ -1,0 +1,28 @@
+name: New extension
+description: Suggest a helper that belongs in this package
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What do you write by hand today?
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Proposed API
+      description: The call site you would like to write.
+      render: swift
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Fit
+      options:
+        - label: It needs no third-party dependency
+          required: true
+        - label: It works on its own, in a single file
+          required: true
