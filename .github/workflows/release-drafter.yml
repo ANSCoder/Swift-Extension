@@ -17,6 +17,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       # No checkout: pull_request_target must never run untrusted code with a write token.
-      - uses: release-drafter/release-drafter@v6
+      - uses: release-drafter/release-drafter@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
