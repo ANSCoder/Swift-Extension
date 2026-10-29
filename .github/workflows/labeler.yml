@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       # pull_request_target runs with write access, so this job never checks out or runs PR code.
-      - uses: actions/labeler@v5
+      - uses: actions/labeler@v7
         with:
           sync-labels: true
